@@ -11,7 +11,7 @@ struct SBottomSheet<Content: View>: View {
     @Binding var isPresented: Bool
     let content: Content
     @GestureState private var dragOffset: CGFloat = 0
-error: src refspec main does not match any
+
     init(isPresented: Binding<Bool>, @ViewBuilder content: () -> Content) {
         self._isPresented = isPresented
         self.content = content()
@@ -29,7 +29,8 @@ error: src refspec main does not match any
 
                 content
             }
-            .padding()
+            .padding([.horizontal, .bottom], 10)
+            .frame(width: UIScreen.main.bounds.width)
             .background(Color(.systemBackground))
             .cornerRadius(20)
             .offset(y: max(isPresented ? 0 : UIScreen.main.bounds.height, dragOffset))
@@ -75,5 +76,7 @@ struct SBottomSheet_Previews: PreviewProvider {
             }
             .previewLayout(.device)
         }
+        .background(Color.gray)
+        .ignoresSafeArea(.all)
     }
 }
