@@ -9,19 +9,13 @@ import Foundation
 import SwiftUI
 
 struct NFTGridView: View {
-    @StateObject private var viewModel: NFTViewModel
-        
-    let ethAddress: String
+    @EnvironmentObject var settings: SnowballSettings
+    @StateObject private var viewModel: NFTViewModel = NFTViewModel()
     
     private var gridLayout: [GridItem] = [
         GridItem(.flexible(), spacing: 10),
         GridItem(.flexible(), spacing: 10)
     ]
-    
-    init(ethAddress: String, viewModel: NFTViewModel = NFTViewModel()) {
-        self.ethAddress = ethAddress
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
     
     var body: some View {
         NavigationView {
@@ -52,19 +46,20 @@ struct NFTGridView: View {
             }
             .navigationTitle("NFTs")
             .onAppear {
-                viewModel.fetchNFTs(forAddress: ethAddress)
+                viewModel.fetchNFTs(forAddress: settings.ethAddress)
             }
         }
     }
 }
 
-struct NFTGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            NFTGridView(ethAddress: "alexmasmej.eth")
-        }
-        .background(Color.gray)
-        .ignoresSafeArea(.all)
-    }
-}
-
+//struct NFTGridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            NFTGridView()
+//        }
+//        .background(Color.gray)
+//        .ignoresSafeArea(.all)
+//        .environmentObject(SnowballSettings(alchemyApiKey: ALCHEMY_API_KEY, address: "vivianphung.eth"))
+//    }
+//}
+//

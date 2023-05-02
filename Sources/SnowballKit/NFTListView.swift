@@ -9,15 +9,15 @@ import SwiftUI
 import Alamofire
 
 class NFTViewModel: ObservableObject {
-    let apikey = "5lQpIobO2bmpy-ZVpbw5b-32253f1zkU"
+    @EnvironmentObject var settings: SnowballSettings
     @Published var nfts = [NFT]()
-
+    
     func fetchNFTs(forAddress address: String, query: String = "") {
-        let url = "https://eth-mainnet.g.alchemy.com/nft/v2/\(apikey)/getNFTs?owner=\(address)&orderBy=transferTime&excludeFilters%5B%5D=SPAM&excludeFilters%5B%5D=AIRDROPS&spamConfidenceLevel=LOW"
+        let url = "https://eth-mainnet.g.alchemy.com/nft/v2/\(settings.alchemyApiKey)/getNFTs?owner=\(address)&orderBy=transferTime&excludeFilters%5B%5D=SPAM&excludeFilters%5B%5D=AIRDROPS&spamConfidenceLevel=LOW"
         let searchQuery = query.isEmpty ? "" : "&search=\(query)"
         let urlString = url + searchQuery
 
-        AF.request(url).responseDecodable(of: NFTList.self) { response in
+        AF.request(urlString).responseDecodable(of: NFTList.self) { response in
             switch response.result {
             case .success(let nftList):
                 self.nfts = nftList.nfts
@@ -56,13 +56,14 @@ struct NFTListView: View {
     }
 }
 
-struct NFTListView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            NFTListView(ethAddress: "vivianphung.eth")
-        }
-        .background(Color.gray)
-        .ignoresSafeArea(.all)
-    }
-}
-
+//struct NFTListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            NFTListView(ethAddress: "vivianphung.eth")
+//        }
+//        .background(Color.gray)
+//        .ignoresSafeArea(.all)
+//        .environmentObject(SnowballSettings(alchemyApiKey: ALCHEMY_API_KEY, address: "vivianphung.eth"))
+//    }
+//}
+//
