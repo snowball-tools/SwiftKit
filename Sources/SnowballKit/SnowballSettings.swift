@@ -8,8 +8,8 @@
 import Foundation
 
 public class SnowballSettings: ObservableObject {
-    @Published var alchemyApiKey: String
-    @Published var ethAddress: String
+    @Published public var ethAddress: String
+    public var alchemyApiKey: String
     
     public init(alchemyApiKey: String, address: String) {
         self.alchemyApiKey = alchemyApiKey
