@@ -7,11 +7,11 @@
 
 import Foundation
 
-class SnowballSettings: ObservableObject {
+public class SnowballSettings: ObservableObject {
     @Published var alchemyApiKey: String
     @Published var ethAddress: String
     
-    init(alchemyApiKey: String, address: String) {
+    public init(alchemyApiKey: String, address: String) {
         self.alchemyApiKey = alchemyApiKey
         self.ethAddress = address
     }
