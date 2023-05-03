@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct NFTGridView: View {
-    @StateObject private var viewModel: NFTViewModel
+    @StateObject private var viewModel = NFTViewModel()
         
     let ethAddress: String
     
@@ -18,9 +18,8 @@ struct NFTGridView: View {
         GridItem(.flexible(), spacing: 10)
     ]
     
-    init(ethAddress: String, viewModel: NFTViewModel = NFTViewModel()) {
+    init(ethAddress: String) {
         self.ethAddress = ethAddress
-        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -29,22 +28,28 @@ struct NFTGridView: View {
                 VStack {
                     LazyVGrid(columns: gridLayout, spacing: 10) {
                         ForEach(viewModel.nfts) { nft in
-                            VStack(alignment: .leading) {
-                                SnowballImage(url: URL(string: nft.media.first?.thumbnail ?? "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dcat&psig=AOvVaw2Njrhkm-eHhxkL2ygGDl3M&ust=1683068826258000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMDw6I2e1f4CFQAAAAAdAAAAABAE")!) {
-                                    ProgressView()
-                                } image: { image in
-                                    Image(uiImage: image)
+                            if nft.title != "" {
+                                VStack(alignment: .leading) {
+                                    SnowballImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!) {
+                                        ProgressView()
+                                    } image: { image in
+                                        Image(uiImage: image)
+                                    }
+                                    
+                                    .onTapGesture {
+                                        print(nft.title)
+                                    }
+                                    Text(nft.title)
+                                        .font(.caption)
+                                        .lineLimit(1)
+                                        .padding(.top, 5)
                                 }
-                                
-                                Text(nft.title)
-                                    .font(.caption)
-                                    .lineLimit(1)
-                                    .padding(.top, 5)
+                                .padding(5)
+                                .background(Color(.systemGroupedBackground))
+                                .cornerRadius(10)
+                                .shadow(radius: 3)
                             }
-                            .padding(5)
-                            .background(Color(.systemGroupedBackground))
-                            .cornerRadius(10)
-                            .shadow(radius: 3)
+                            
                         }
                     }
                     .padding(10)
@@ -61,7 +66,7 @@ struct NFTGridView: View {
 struct NFTGridView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NFTGridView(ethAddress: "alexmasmej.eth")
+            NFTGridView(ethAddress: "vivianphung.eth")
         }
         .background(Color.gray)
         .ignoresSafeArea(.all)

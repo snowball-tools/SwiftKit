@@ -9,7 +9,7 @@ import SwiftUI
 import Alamofire
 
 class NFTViewModel: ObservableObject {
-    let apikey = "5lQpIobO2bmpy-ZVpbw5b-32253f1zkU"
+    let apikey = "d-AZ-ZFjtd-3CP51s4JEDokAinBwD7Q8"
     @Published var nfts = [NFT]()
 
     func fetchNFTs(forAddress address: String, query: String = "") {
