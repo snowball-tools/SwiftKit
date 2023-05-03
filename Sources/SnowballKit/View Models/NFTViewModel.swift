@@ -17,7 +17,7 @@ class NFTViewModel: ObservableObject {
         AF.request(url).responseDecodable(of: NFTList.self) { response in
             switch response.result {
             case .success(let nftList):
-                self.nfts = nftList.nfts
+                self.nfts = nftList.nfts.filter({ $0.title != "" })
             case .failure(let error):
                 print("Error fetching NFTs: \(error)")
             }

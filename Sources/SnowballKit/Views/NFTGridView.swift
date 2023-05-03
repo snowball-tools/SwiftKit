@@ -26,7 +26,6 @@ public struct NFTGridView: View {
             VStack {
                 LazyVGrid(columns: gridLayout, spacing: 10) {
                     ForEach(viewModel.nfts) { nft in
-                        if nft.title != "" {
                             VStack(alignment: .leading) {
                                 SnowballImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!) {
                                     ProgressView()
@@ -34,9 +33,6 @@ public struct NFTGridView: View {
                                     Image(uiImage: image)
                                 }
                                 
-                                .onTapGesture {
-                                    print(nft.title)
-                                }
                                 Text(nft.title)
                                     .font(.caption)
                                     .lineLimit(1)
@@ -47,8 +43,6 @@ public struct NFTGridView: View {
                             .cornerRadius(10)
                             .shadow(radius: 3)
                         }
-                        
-                    }
                 }
                 .padding(10)
             }

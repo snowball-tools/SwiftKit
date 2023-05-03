@@ -13,7 +13,6 @@ public struct NFTListView: View {
     
     public var body: some View {
         List(viewModel.nfts) { nft in
-            if nft.title != "" {
                 HStack {
                     SnowballImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!) {
                         ProgressView()
@@ -25,7 +24,6 @@ public struct NFTListView: View {
                         .lineLimit(1)
                         .padding(.top, 5)
                 }
-            }
         }
         
         .onAppear {
