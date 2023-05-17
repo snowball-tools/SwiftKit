@@ -1,3 +1,3 @@
 # SnowballKit
 
-A description of this package.
+Welcome! Lets make crypto

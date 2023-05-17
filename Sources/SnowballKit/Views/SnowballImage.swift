@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  ImageLoader.swift
+//  SnowballKit
 //
 //  Created by Vivian Phung on 5/1/23.
 //
