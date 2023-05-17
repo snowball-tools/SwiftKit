@@ -11,22 +11,21 @@ import SnowballKit
 struct ButtonExampleView: View {
     var body: some View {
         VStack {
-            
             SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
                 print("Filled Button tapped!")
-            }, style: .filled(.blue))
+            }, isEnabled: true)
             
             SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
                 print("Tinted Button tapped!")
-            }, style: .tinted(.green))
+            }, isEnabled: true)
             
             SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
                 print("Plain Button tapped!")
-            }, style: .plain)
+            }, isEnabled: true)
             
             SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
                 print("Danger Button tapped!")
-            }, style: .danger)
+            }, isEnabled: true)
         }
         .padding()
     }

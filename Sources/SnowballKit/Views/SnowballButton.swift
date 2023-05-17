@@ -14,6 +14,14 @@ public struct SnowballButton: View {
     var action: () -> Void
     var isEnabled: Bool
     
+    public init(leftIcon: String? = nil, text: String? = nil, rightIcon: String? = nil, action: @escaping () -> Void, isEnabled: Bool) {
+        self.leftIcon = leftIcon
+        self.text = text
+        self.rightIcon = rightIcon
+        self.action = action
+        self.isEnabled = isEnabled
+    }
+    
     public var body: some View {
         Button(action: action) {
             HStack {

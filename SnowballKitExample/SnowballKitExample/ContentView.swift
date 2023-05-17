@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        NavigationStack {
             List {
                 NavigationLink("Button") {
                     ButtonExampleView()
                 }
             }
             .listStyle(.plain)
+            .navigationTitle("Snowball Kit")
         }
-        .padding()
     }
 }
 

@@ -12,6 +12,7 @@
 		080FD8FC2A144DB000971E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080FD8FB2A144DB000971E78 /* Assets.xcassets */; };
 		080FD8FF2A144DB000971E78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080FD8FE2A144DB000971E78 /* Preview Assets.xcassets */; };
 		080FD9062A144E0E00971E78 /* ButtonExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080FD9052A144E0E00971E78 /* ButtonExampleView.swift */; };
+		080FD9102A14648700971E78 /* SnowballKit in Frameworks */ = {isa = PBXBuildFile; productRef = 080FD90F2A14648700971E78 /* SnowballKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				080FD9102A14648700971E78 /* SnowballKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +43,7 @@
 				080FD9092A1450AE00971E78 /* SnowballKit */,
 				080FD8F62A144DB000971E78 /* SnowballKitExample */,
 				080FD8F52A144DB000971E78 /* Products */,
+				080FD90E2A14648700971E78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +75,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		080FD90E2A14648700971E78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,6 +98,9 @@
 			dependencies = (
 			);
 			name = SnowballKitExample;
+			packageProductDependencies = (
+				080FD90F2A14648700971E78 /* SnowballKit */,
+			);
 			productName = SnowballKitExample;
 			productReference = 080FD8F42A144DB000971E78 /* SnowballKitExample.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +358,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		080FD90F2A14648700971E78 /* SnowballKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SnowballKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 080FD8EC2A144DB000971E78 /* Project object */;
 }
