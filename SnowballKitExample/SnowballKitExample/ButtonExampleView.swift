@@ -10,24 +10,39 @@ import SnowballKit
 
 struct ButtonExampleView: View {
     var body: some View {
-        VStack {
-            SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
-                print("Filled Button tapped!")
-            }, isEnabled: true)
-            
-            SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
-                print("Tinted Button tapped!")
-            }, isEnabled: true)
-            
-            SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
-                print("Plain Button tapped!")
-            }, isEnabled: true)
-            
-            SnowballButton(leftIcon: "star.fill", text: "Button", rightIcon: "chevron.right", action: {
-                print("Danger Button tapped!")
-            }, isEnabled: true)
+        HStack {
+            VStack {
+                Text("reg")
+                Button("Hello") {}
+                    .buttonStyle(.borderedProminent)
+                Button("Hello") {}
+                    .buttonStyle(.bordered)
+                Button("Hello") {}
+                    .buttonStyle(.plain)
+                Button("Hello", role: .destructive) {}
+                    .buttonStyle(.borderedProminent)
+                Button("Hello", role: .destructive) {}
+                    .buttonStyle(.bordered)
+            }
+            VStack {
+                Text("disabled")
+                Button("Hello") {}
+                    .buttonStyle(.borderedProminent)
+                    .disabled(true)
+                Button("Hello") {}
+                    .buttonStyle(.bordered)
+                    .disabled(true)
+                Button("Hello") {}
+                    .buttonStyle(.plain)
+                    .disabled(true)
+                Button("Hello", role: .destructive) {}
+                    .disabled(true)
+                    .buttonStyle(.borderedProminent)
+                Button("Hello", role: .destructive) {}
+                    .buttonStyle(.bordered)
+                    .disabled(true)
+            }
         }
-        .padding()
     }
 }
 
