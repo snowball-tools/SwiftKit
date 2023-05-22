@@ -12,14 +12,14 @@ public struct SnowballButton: View {
     var text: String?
     var rightIcon: String?
     var action: () -> Void
-    
+
     public init(leftIcon: String? = nil, text: String? = nil, rightIcon: String? = nil, action: @escaping () -> Void) {
         self.leftIcon = leftIcon
         self.text = text
         self.rightIcon = rightIcon
         self.action = action
     }
-    
+
     public var body: some View {
         Button(action: action) {
             HStack {
@@ -39,7 +39,7 @@ public struct SnowballButton: View {
 
 public struct FilledButtonStyle: ButtonStyle {
     let color: Color
-    
+
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .buttonStyle(.plain)
@@ -56,7 +56,7 @@ public extension ButtonStyle where Self == FilledButtonStyle {
 
 public struct TintedButtonStyle: ButtonStyle {
     let color: Color
-    
+
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(color)

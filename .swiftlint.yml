@@ -1,0 +1,24 @@
+disabled_rules:
+  - trailing_comma
+  - inclusive_language
+  - function_body_length
+  - line_length
+  - identifier_name
+  - cyclomatic_complexity
+  - type_body_length
+  - file_length
+  - force_try
+  - force_cast
+
+excluded:
+  - SnowballSwiftKit/SnowballSwiftExample/SnowballSwiftExample/.build
+
+custom_rules:
+  restrict_non_ascii:
+    included: ".*\\.swift"
+    name: "Restrict Unicode"
+    regex: "([^\u0000-\u007F]+)"
+    match_kinds:
+      - identifier
+    message: "Non-ascii not allowed"
+    severity: error

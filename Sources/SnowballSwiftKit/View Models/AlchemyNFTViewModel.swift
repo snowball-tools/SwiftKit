@@ -11,7 +11,7 @@ import Alamofire
 // todo: make generic
 public class AlchemyNFTViewModel: ObservableObject {
     @Published var nfts = [AlchemyNFT]()
-    
+
     func fetchNFTs(forAddress address: String, query: String = "", key: String) {
         let url = "https://eth-mainnet.g.alchemy.com/nft/v2/\(key)/getNFTs?owner=\(address)&orderBy=transferTime&excludeFilters%5B%5D=SPAM&excludeFilters%5B%5D=AIRDROPS&spamConfidenceLevel=LOW"
 

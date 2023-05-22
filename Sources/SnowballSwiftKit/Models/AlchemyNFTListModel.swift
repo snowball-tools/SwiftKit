@@ -9,7 +9,7 @@ import Foundation
 
 public struct AlchemyNFTListModel: Codable {
     let nfts: [AlchemyNFT]
-    
+
     enum CodingKeys: String, CodingKey {
         case nfts = "ownedNfts"
     }
@@ -25,10 +25,10 @@ public struct AlchemyNFT: Codable, Identifiable {
     let media: [AlchemyNFTMedia]
     let timeLastUpdated: String
     let contractMetadata: AlchemyNFTContractMetadata
-    
+
     public var id: UUID = UUID()
     var imageUrl: String? { media.first?.raw }
-    
+
     enum CodingKeys: String, CodingKey {
         case contract, balance, title, description, tokenUri, media, timeLastUpdated, contractMetadata
         case nftId = "id"

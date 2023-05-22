@@ -8,19 +8,20 @@
 import Foundation
 import SwiftUI
 
+// todo: snowball settings
 public struct SnowballNFTGridView: View {
     @StateObject private var viewModel = AlchemyNFTViewModel()
     @State var ethAddress: String
-    
+
     private var gridLayout: [GridItem] = [
         GridItem(.flexible(), spacing: 10),
         GridItem(.flexible(), spacing: 10)
     ]
-    
+
     public init(ethAddress: String) {
         self.ethAddress = ethAddress
     }
-    
+
     public var body: some View {
         ScrollView {
             VStack {

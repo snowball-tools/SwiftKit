@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// todo: stack 
 public struct SnowballAvatar: View {
     public var body: some View {
         ZStack {
@@ -17,8 +18,6 @@ public struct SnowballAvatar: View {
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 4)
-            
-            
         }
     }
 }
