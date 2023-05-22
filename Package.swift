@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "SnowballKit",
-    platforms: [.iOS(.v14),],
+    name: "SnowballSwiftKit",
+    platforms: [.iOS(.v15),],
     products: [
         .library(
-            name: "SnowballKit",
-            targets: ["SnowballKit"]),
+            name: "SnowballSwiftKit",
+            targets: ["SnowballSwiftKit"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.0.0"),
     ],
     targets: [
         .target(
-            name: "SnowballKit",
+            name: "SnowballSwiftKit",
             dependencies: [
                 "Alamofire"
             ]),

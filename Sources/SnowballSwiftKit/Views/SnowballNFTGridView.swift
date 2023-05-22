@@ -1,6 +1,6 @@
 //
-//  NFTGridView.swift
-//  SnowballKit
+//  SnowballNFTGridView.swift
+//  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/1/23.
 //
@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-public struct NFTGridView: View {
-    @StateObject private var viewModel = NFTViewModel()
+public struct SnowballNFTGridView: View {
+    @StateObject private var viewModel = AlchemyNFTViewModel()
     @State var ethAddress: String
     
     private var gridLayout: [GridItem] = [
@@ -27,12 +27,7 @@ public struct NFTGridView: View {
                 LazyVGrid(columns: gridLayout, spacing: 10) {
                     ForEach(viewModel.nfts) { nft in
                             VStack(alignment: .leading) {
-                                SnowballImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!) {
-                                    ProgressView()
-                                } image: { image in
-                                    Image(uiImage: image)
-                                }
-                                
+                                AsyncImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg"))
                                 Text(nft.title)
                                     .font(.caption)
                                     .lineLimit(1)
@@ -47,7 +42,7 @@ public struct NFTGridView: View {
                 .padding(10)
             }
             .onAppear {
-                viewModel.fetchNFTs(forAddress: self.ethAddress, key: ALCHEMY_API_KEY)
+                viewModel.fetchNFTs(forAddress: self.ethAddress, key: "")
             }
         }
     }
@@ -56,7 +51,7 @@ public struct NFTGridView: View {
 struct NFTGridView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NFTGridView(ethAddress: "vivianphung.eth")
+            SnowballNFTGridView(ethAddress: "vivianphung.eth")
         }
     }
 }

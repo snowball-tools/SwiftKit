@@ -1,6 +1,6 @@
 //
 //  SnowballButton.swift
-//  SnowballKit
+//  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/1/23.
 //
@@ -37,10 +37,10 @@ public struct SnowballButton: View {
     }
 }
 
-struct FilledButtonStyle: ButtonStyle {
+public struct FilledButtonStyle: ButtonStyle {
     let color: Color
     
-    func makeBody(configuration: Configuration) -> some View {
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .buttonStyle(.plain)
             .padding()
@@ -50,36 +50,36 @@ struct FilledButtonStyle: ButtonStyle {
     }
 }
 
-extension ButtonStyle where Self == FilledButtonStyle {
+public extension ButtonStyle where Self == FilledButtonStyle {
     static func filled(color: Color) -> Self { .init(color: color) }
 }
 
-struct TintedButtonStyle: ButtonStyle {
+public struct TintedButtonStyle: ButtonStyle {
     let color: Color
     
-    func makeBody(configuration: Configuration) -> some View {
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(color)
     }
 }
 
-extension ButtonStyle where Self == TintedButtonStyle {
+public extension ButtonStyle where Self == TintedButtonStyle {
     static func tinted(color: Color) -> Self { .init(color: color) }
 }
 
-struct PlainButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
+public struct PlainButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.primary)
     }
 }
 
-extension ButtonStyle where Self == PlainButtonStyle {
+public extension ButtonStyle where Self == PlainButtonStyle {
     static var simple: Self { .init() }
 }
 
-struct DangerButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
+public struct DangerButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
             .background(Color.red)
@@ -88,19 +88,6 @@ struct DangerButtonStyle: ButtonStyle {
     }
 }
 
-extension ButtonStyle where Self == DangerButtonStyle {
+public extension ButtonStyle where Self == DangerButtonStyle {
     static var danger: Self { .init() }
-}
-
-struct ContentView: View {
-    var body: some View {
-        SnowballButton {}
-            .buttonStyle(.filled(color: .blue))
-        SnowballButton {}
-            .buttonStyle(.tinted(color: .red))
-        SnowballButton {}
-            .buttonStyle(.simple)
-        SnowballButton {}
-            .buttonStyle(.danger)
-    }
 }

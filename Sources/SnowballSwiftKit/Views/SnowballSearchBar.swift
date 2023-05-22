@@ -1,13 +1,13 @@
 //
-//  SearchBar.swift
-//  SnowballKit
+//  SnowballSearchBar.swift
+//  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/1/23.
 //
 
 import SwiftUI
 
-struct SearchBar: UIViewRepresentable {
+struct SnowballSearchBar: UIViewRepresentable {
     @Binding var text: String
     var placeholder: String
 
@@ -29,9 +29,9 @@ struct SearchBar: UIViewRepresentable {
     }
 
     class Coordinator: NSObject, UISearchBarDelegate {
-        let control: SearchBar
+        let control: SnowballSearchBar
 
-        init(_ control: SearchBar) {
+        init(_ control: SnowballSearchBar) {
             self.control = control
         }
 

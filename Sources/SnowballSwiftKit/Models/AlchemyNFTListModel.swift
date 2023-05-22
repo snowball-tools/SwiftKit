@@ -1,32 +1,32 @@
 //
-//  NFTModel.swift
-//  SnowballKit
+//  AlchemyNFTListModel.swift
+//  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/1/23.
 //
 
 import Foundation
 
-struct NFTList: Codable {
-    let nfts: [NFT]
+public struct AlchemyNFTListModel: Codable {
+    let nfts: [AlchemyNFT]
     
     enum CodingKeys: String, CodingKey {
         case nfts = "ownedNfts"
     }
 }
 
-struct NFT: Codable, Identifiable {
-    let contract: Contract
-    let nftId: ID
+public struct AlchemyNFT: Codable, Identifiable {
+    let contract: AlchemyNFTContract
+    let nftId: AlchemyNFTID
     let balance: String
     let title: String
     let description: String
-    let tokenUri: TokenUri
-    let media: [Media]
+    let tokenUri: AlchemyNFTTokenUri
+    let media: [AlchemyNFTMedia]
     let timeLastUpdated: String
-    let contractMetadata: ContractMetadata
+    let contractMetadata: AlchemyNFTContractMetadata
     
-    var id: UUID = UUID()
+    public var id: UUID = UUID()
     var imageUrl: String? { media.first?.raw }
     
     enum CodingKeys: String, CodingKey {
@@ -35,42 +35,42 @@ struct NFT: Codable, Identifiable {
     }
 }
 
-struct Contract: Codable {
+public struct AlchemyNFTContract: Codable {
     let address: String
 }
 
-struct ID: Codable {
+public struct AlchemyNFTID: Codable {
     let tokenId: String
-    let tokenMetadata: TokenMetadata
+    let tokenMetadata: AlchemyNFTTokenMetadata
 }
 
-struct TokenMetadata: Codable {
+public struct AlchemyNFTTokenMetadata: Codable {
     let tokenType: String
 }
 
-struct TokenUri: Codable {
+public struct AlchemyNFTTokenUri: Codable {
     let gateway: String
     let raw: String
 }
 
-struct Media: Codable {
+public struct AlchemyNFTMedia: Codable {
     let gateway: String
     let thumbnail: String?
     let raw: String
     let format: String?
 }
 
-struct ContractMetadata: Codable {
+public struct AlchemyNFTContractMetadata: Codable {
     let name: String?
     let symbol: String?
     let totalSupply: String?
     let tokenType: String?
     let contractDeployer: String?
     let deployedBlockNumber: Int?
-    let openSea: OpenSea?
+    let openSea: AlchemyNFTOpenSea?
 }
 
-struct OpenSea: Codable {
+public struct AlchemyNFTOpenSea: Codable {
     let floorPrice: Double?
     let collectionName: String?
     let safelistRequestStatus: String?
