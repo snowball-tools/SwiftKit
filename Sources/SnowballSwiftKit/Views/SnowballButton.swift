@@ -9,14 +9,18 @@ import SwiftUI
 
 public struct SnowballButton: View {
     var leftIcon: String?
+    var leftSystemIcon: String?
     var text: String?
     var rightIcon: String?
+    var rightSystemIcon: String?
     var action: () -> Void
 
-    public init(leftIcon: String? = nil, text: String? = nil, rightIcon: String? = nil, action: @escaping () -> Void) {
+    public init(leftIcon: String? = nil, leftSystemIcon: String? = nil, text: String? = nil, rightIcon: String? = nil, rightSystemIcon: String? = nil, action: @escaping () -> Void) {
         self.leftIcon = leftIcon
+        self.leftSystemIcon = leftSystemIcon
         self.text = text
         self.rightIcon = rightIcon
+        self.rightSystemIcon = rightSystemIcon
         self.action = action
     }
 
@@ -24,13 +28,19 @@ public struct SnowballButton: View {
         Button(action: action) {
             HStack {
                 if let leftIcon = leftIcon {
-                    Image(systemName: leftIcon)
+                    Image(leftIcon)
+                }
+                if let leftSystemIcon = leftSystemIcon {
+                    Image(systemName: leftSystemIcon)
                 }
                 if let text = text {
                     Text(text)
                 }
                 if let rightIcon = rightIcon {
-                    Image(systemName: rightIcon)
+                    Image(rightIcon)
+                }
+                if let rightSystemIcon = rightSystemIcon {
+                    Image(systemName: rightSystemIcon)
                 }
             }
         }

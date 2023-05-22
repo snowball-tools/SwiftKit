@@ -11,7 +11,7 @@ import SwiftUI
 struct SnowballSwiftExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SnowballSwiftKitHomeView()
         }
     }
 }
