@@ -27,22 +27,13 @@ Packages:
 - Snowball Kit documentation site
 - `SnowballKotlinKit` (for [Jetpack](https://developer.android.com/jetpack))
 
-## Documentation
+## `SnowballAssetKit` Documentation
 
-for `SnowballSwiftKit`, 
+Creating the `SF Symbols` version of assets is currently pretty manual ([guide](https://www.david-smith.org/blog/2023/01/23/design-notes-18/)). Looking into automating using a figma extension (worst case python since its an svg)
 
-### `SnowballAvatar` (in progress)
-### `SnowballAvatarStack` (in progress)
-### `SnowballButton` (in progress)
-### `SnowballNFTGridView` (in progress)
-### `SnowballNFTListView` (in progress)
-### `SnowballSearchBar` (in progress)
-### `SnowballSwitchLabel` (in progress)
-### `SnowballTextInput` (in progress)
-### `SnowballToastView` (in progress)
-- `SnowballToastType`: `error`, `warning`, `neutral`, `positive`
-
-for `SnowballAssetKit`,
+- What's ready? `sol`, `btc`
+- In works: `eth`, `avax`, `bnb`, `matic`, `atom`, `dot`, `ada`, `algo`, `ftt`, `msol`, `ltc`, `xrp`, `yifi`, `eos`, `ar`, `sec`, `fil`, `trx`, `xtz`, `sushi`, `ape`, `near`, `doge`, `srm`, `gmt`, `crv`, `yfi`, `ftm`, `jewel`, `usdc` and external wallets `metamask`, `phantom`, `walletconnect`, `brave`, `ledger`, `cbWallet`, `trezor`, `trust`, `argent`
+}
 
 use symbols via 
 
@@ -54,5 +45,19 @@ SnowballImage(.sol)
 // UIKit
 SnowballUIImage("SOL")
 SnowballUIImage(.sol)
-
 ```
+
+## `SnowballSwiftKit` Documentation
+
+V0 (rough rough start) are ready! 
+
+- `SnowballAvatar`
+- `SnowballAvatarStack`
+- `SnowballButton`
+- `SnowballNFTGridView`
+- `SnowballNFTListView`
+- `SnowballSearchBar`
+- `SnowballSwitchLabel`
+- `SnowballTextInput`
+- `SnowballToastView`
+    - `SnowballToastType`: `error`, `warning`, `neutral`, `positive`
