@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  SnowballSwiftExample
+//
+//  Created by Vivian Phung on 5/22/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ALCHEMY_NFT_KEY = PasteNFTKeyHere

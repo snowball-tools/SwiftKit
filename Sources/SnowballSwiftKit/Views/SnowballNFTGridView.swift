@@ -13,13 +13,17 @@ public struct SnowballNFTGridView: View {
     @StateObject private var viewModel = AlchemyNFTViewModel()
     @State var ethAddress: String
 
+    // todo: snowball settings with api key
+    var alchemyKey: String
+
     private var gridLayout: [GridItem] = [
         GridItem(.flexible(), spacing: 10),
         GridItem(.flexible(), spacing: 10)
     ]
 
-    public init(ethAddress: String) {
+    public init(ethAddress: String, alchemyKey: String) {
         self.ethAddress = ethAddress
+        self.alchemyKey = alchemyKey
     }
 
     public var body: some View {
@@ -43,16 +47,8 @@ public struct SnowballNFTGridView: View {
                 .padding(10)
             }
             .onAppear {
-                viewModel.fetchNFTs(forAddress: self.ethAddress, key: "")
+                viewModel.fetchNFTs(forAddress: self.ethAddress, key: alchemyKey)
             }
-        }
-    }
-}
-
-struct NFTGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            SnowballNFTGridView(ethAddress: "vivianphung.eth")
         }
     }
 }

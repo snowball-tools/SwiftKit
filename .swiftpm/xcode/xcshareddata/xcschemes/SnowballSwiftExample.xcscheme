@@ -17,7 +17,21 @@
                BlueprintIdentifier = "0877BF8F2A1C18D500A236AB"
                BuildableName = "SnowballSwiftExample.app"
                BlueprintName = "SnowballSwiftExample"
-               ReferencedContainer = "container:SnowballSwiftExample.xcodeproj">
+               ReferencedContainer = "container:SnowballSwiftExample/SnowballSwiftExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SnowballSwiftKit"
+               BuildableName = "SnowballSwiftKit"
+               BlueprintName = "SnowballSwiftKit"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +51,7 @@
                BlueprintIdentifier = "0877BF9F2A1C18D600A236AB"
                BuildableName = "SnowballSwiftExampleTests.xctest"
                BlueprintName = "SnowballSwiftExampleTests"
-               ReferencedContainer = "container:SnowballSwiftExample.xcodeproj">
+               ReferencedContainer = "container:SnowballSwiftExample/SnowballSwiftExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -48,7 +62,7 @@
                BlueprintIdentifier = "0877BFA92A1C18D600A236AB"
                BuildableName = "SnowballSwiftExampleUITests.xctest"
                BlueprintName = "SnowballSwiftExampleUITests"
-               ReferencedContainer = "container:SnowballSwiftExample.xcodeproj">
+               ReferencedContainer = "container:SnowballSwiftExample/SnowballSwiftExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -70,7 +84,7 @@
             BlueprintIdentifier = "0877BF8F2A1C18D500A236AB"
             BuildableName = "SnowballSwiftExample.app"
             BlueprintName = "SnowballSwiftExample"
-            ReferencedContainer = "container:SnowballSwiftExample.xcodeproj">
+            ReferencedContainer = "container:SnowballSwiftExample/SnowballSwiftExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -87,7 +101,7 @@
             BlueprintIdentifier = "0877BF8F2A1C18D500A236AB"
             BuildableName = "SnowballSwiftExample.app"
             BlueprintName = "SnowballSwiftExample"
-            ReferencedContainer = "container:SnowballSwiftExample.xcodeproj">
+            ReferencedContainer = "container:SnowballSwiftExample/SnowballSwiftExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

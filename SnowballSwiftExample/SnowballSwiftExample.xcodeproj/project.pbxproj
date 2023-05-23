@@ -17,6 +17,8 @@
 		0877BFAF2A1C18D600A236AB /* SnowballSwiftExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877BFAE2A1C18D600A236AB /* SnowballSwiftExampleUITests.swift */; };
 		0877BFB12A1C18D600A236AB /* SnowballSwiftExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877BFB02A1C18D600A236AB /* SnowballSwiftExampleUITestsLaunchTests.swift */; };
 		0877BFC02A1C195F00A236AB /* SnowballSwiftKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0877BFBF2A1C195F00A236AB /* SnowballSwiftKit */; };
+		08801CBD2A1C438500C98ADF /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 08801CBC2A1C438500C98ADF /* Config.xcconfig */; };
+		08801CBF2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		0877BFAE2A1C18D600A236AB /* SnowballSwiftExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleUITests.swift; sourceTree = "<group>"; };
 		0877BFB02A1C18D600A236AB /* SnowballSwiftExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0877BFBD2A1C192600A236AB /* SnowballSwiftKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SnowballSwiftKit; path = ..; sourceTree = "<group>"; };
+		08801CBC2A1C438500C98ADF /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = SOURCE_ROOT; };
+		08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleNFTView.swift; sourceTree = "<group>"; };
+		08F1AAB32A1C405500BD4CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		084672F22A1C372600C7FB93 /* Example Views */ = {
 			isa = PBXGroup;
 			children = (
+				08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */,
 				084672EE2A1C2B8B00C7FB93 /* SnowballSwiftExampleText.swift */,
 				084672F02A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift */,
 			);
@@ -115,6 +121,8 @@
 				0877BF952A1C18D500A236AB /* SnowballSwiftKitHomeView.swift */,
 				084672F22A1C372600C7FB93 /* Example Views */,
 				0877BF972A1C18D600A236AB /* Assets.xcassets */,
+				08801CBC2A1C438500C98ADF /* Config.xcconfig */,
+				08F1AAB32A1C405500BD4CC7 /* Info.plist */,
 				0877BF992A1C18D600A236AB /* Preview Content */,
 			);
 			path = SnowballSwiftExample;
@@ -253,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0877BF9B2A1C18D600A236AB /* Preview Assets.xcassets in Resources */,
+				08801CBD2A1C438500C98ADF /* Config.xcconfig in Resources */,
 				0877BF982A1C18D600A236AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +289,7 @@
 			files = (
 				0877BF962A1C18D500A236AB /* SnowballSwiftKitHomeView.swift in Sources */,
 				084672F12A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift in Sources */,
+				08801CBF2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift in Sources */,
 				0877BF942A1C18D500A236AB /* SnowballSwiftExampleApp.swift in Sources */,
 				084672EF2A1C2B8B00C7FB93 /* SnowballSwiftExampleText.swift in Sources */,
 			);
@@ -320,6 +330,7 @@
 /* Begin XCBuildConfiguration section */
 		0877BFB22A1C18D600A236AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08801CBC2A1C438500C98ADF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -434,6 +445,7 @@
 		};
 		0877BFB52A1C18D600A236AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08801CBC2A1C438500C98ADF /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +455,7 @@
 				DEVELOPMENT_TEAM = 9SAQ42S589;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SnowballSwiftExample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Snowball Swift Example App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -474,6 +487,7 @@
 				DEVELOPMENT_TEAM = 9SAQ42S589;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SnowballSwiftExample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Snowball Swift Example App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -496,6 +510,7 @@
 		};
 		0877BFB82A1C18D600A236AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08801CBC2A1C438500C98ADF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +551,7 @@
 		};
 		0877BFBB2A1C18D600A236AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08801CBC2A1C438500C98ADF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

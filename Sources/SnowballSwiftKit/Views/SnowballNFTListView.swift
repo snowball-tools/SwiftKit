@@ -12,6 +12,14 @@ public struct SnowballNFTListView: View {
     @StateObject private var viewModel = AlchemyNFTViewModel()
     let ethAddress: String
 
+    // todo: snowball settings with api key
+    var alchemyKey: String
+
+    public init(ethAddress: String, alchemyKey: String) {
+        self.ethAddress = ethAddress
+        self.alchemyKey = alchemyKey
+    }
+
     public var body: some View {
         List(viewModel.nfts) { nft in
                 HStack {
@@ -25,15 +33,7 @@ public struct SnowballNFTListView: View {
         }
 
         .onAppear {
-            viewModel.fetchNFTs(forAddress: ethAddress, key: "")
-        }
-    }
-}
-
-struct NFTListView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            SnowballNFTListView(ethAddress: "vivianphung.eth")
+            viewModel.fetchNFTs(forAddress: ethAddress, key: alchemyKey)
         }
     }
 }
