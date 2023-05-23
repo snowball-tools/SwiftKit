@@ -36,6 +36,11 @@ struct SnowballSwiftKitHomeView: View {
                         .navigationTitle("NFT List View")
                 }
                 .disabled(alchemyKey == "" || alchemyKey == "PasteNFTKeyHere")
+
+                NavigationLink("Avatar View") {
+                    SnowballSwiftExampleAvatarView()
+                        .navigationTitle("Avatar View")
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Snowball Example")

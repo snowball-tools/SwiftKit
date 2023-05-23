@@ -1,29 +1,29 @@
 //
 //  SnowballAvatar.swift
-//  SnowballSwiftKit
+//  
 //
 //  Created by Vivian Phung on 5/22/23.
 //
 
 import SwiftUI
 
-// todo: stack 
 public struct SnowballAvatar: View {
+    let image: Image
+
+    public init(image: Image) {
+        self.image = image
+    }
+
     public var body: some View {
-        ZStack {
-            Image(systemName: "person.crop.circle")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 150, height: 150)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 4)
-        }
+        image
+            .resizable()
+            .scaledToFit()
+            .clipShape(Circle())
     }
 }
 
 struct SnowballAvatar_Previews: PreviewProvider {
     static var previews: some View {
-        SnowballAvatar()
+        SnowballAvatar(image: Image(systemName: "figure.fall.circle.fill"))
     }
 }
