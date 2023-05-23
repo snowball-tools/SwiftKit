@@ -24,12 +24,14 @@ Read more on [Config / Dev Mode](https://nshipster.com/xcconfig/)
 
 ## Documentation
 
-- `SnowballAvatar` (in progress)
-- `SnowballAvatarStack` (in progress)
-- `SnowballButton` (in progress)
-- `SnowballNFTGridView` (in progress)
-- `SnowballNFTListView` (in progress)
-- `SnowballSearchBar` (in progress)
-- `SnowballSwitchLabel` (in progress)
-- `SnowballTextInput` (in progress)
-- `SnowballToastView` (in progress)
+### `SnowballAvatar` (in progress)
+### `SnowballAvatarStack` (in progress)
+### `SnowballButton` (in progress)
+### `SnowballNFTGridView` (in progress)
+### `SnowballNFTListView` (in progress)
+### `SnowballSearchBar` (in progress)
+### `SnowballSwitchLabel` (in progress)
+### `SnowballTextInput` (in progress)
+### `SnowballToastView` (in progress)
+- `SnowballToastType`: `error`, `warning`, `neutral`, `positive`
+
