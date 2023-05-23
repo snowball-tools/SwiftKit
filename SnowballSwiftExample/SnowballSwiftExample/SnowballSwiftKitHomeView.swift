@@ -50,6 +50,12 @@ struct SnowballSwiftKitHomeView: View {
                         .navigationTitle("Input View")
                         .padding()
                 }
+
+                NavigationLink("Toast View") {
+                    SnowballSwiftExampleToastView()
+                        .navigationTitle("Toast View")
+                        .padding()
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Snowball Example")
