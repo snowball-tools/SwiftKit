@@ -38,7 +38,7 @@ struct SnowballSwiftKitHomeView: View {
                 }
                 .disabled(alchemyKey == "" || alchemyKey == "PasteNFTKeyHere")
 
-                NavigationLink("Avatar View") {
+                NavigationLink("Avatar View (needs a lot of work)") {
                     SnowballSwiftExampleAvatarStackView()
                         .navigationTitle("Avatar View")
                 }

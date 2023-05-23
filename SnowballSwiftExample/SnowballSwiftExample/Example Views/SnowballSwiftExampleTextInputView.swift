@@ -13,7 +13,8 @@ struct SnowballSwiftExampleTextInputView: View {
     @State var nonEmptyTextInput: String = "Hello World"
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text("SnowballTextInput")
             SnowballTextInput(text: $textInput)
 
             SnowballTextInput(text: $nonEmptyTextInput)
@@ -23,6 +24,16 @@ struct SnowballSwiftExampleTextInputView: View {
             SnowballTextInput(leftSystemIcon: "clipboard", text: $textInput)
 
             SnowballTextInput(text: $textInput, emptyStateText: "Empty state text changed")
+
+            Text("Apple's TextField")
+            TextField("DefaultTextFieldStyle", text: $textInput)
+                .textFieldStyle(DefaultTextFieldStyle())
+
+            TextField("PlainTextFieldStyle", text: $textInput)
+                .textFieldStyle(PlainTextFieldStyle())
+
+            TextField("RoundedBorderTextFieldStyle", text: $textInput)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
         }
     }
 }
