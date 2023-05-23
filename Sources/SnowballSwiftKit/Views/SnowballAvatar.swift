@@ -1,6 +1,6 @@
 //
 //  SnowballAvatar.swift
-//  
+//  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/22/23.
 //

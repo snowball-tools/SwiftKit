@@ -8,6 +8,8 @@
 import SwiftUI
 
 public struct SnowballAvatarStack: View {
+    let colors: [Color] = [.red, .blue, .purple]
+
     var avatars: [SnowballAvatarModel]
 
     public init(_ avatars: [SnowballAvatarModel]) {
@@ -16,13 +18,17 @@ public struct SnowballAvatarStack: View {
 
     public var body: some View {
         ZStack {
-            ForEach(Array(zip(avatars.indices, avatars)), id: \.0) { index, item in
-                AsyncImage(url: item.image) { image in
-                    SnowballAvatar(image: image)
-                } placeholder: {
-                    SnowballAvatar(image: Image(systemName: "person.crop.circle"))
+            GeometryReader { geometry in
+                HStack(spacing: -(geometry.size.width / CGFloat(avatars.count + 1)) + 100) {
+                    ForEach(Array(zip(avatars.indices, avatars)), id: \.0) { _, item in
+                        AsyncImage(url: item.image) { image in
+                            SnowballAvatar(image: image)
+                        } placeholder: {
+                            SnowballAvatar(image: Image(systemName: "person.crop.circle"))
+                        }
+                        .frame(width: geometry.size.width / CGFloat(avatars.count + 1))
+                    }
                 }
-                .offset(x: CGFloat(index) * 60)
             }
         }
     }
@@ -34,6 +40,8 @@ struct SnowballAvatarStack_Previews: PreviewProvider {
             SnowballAvatarStack([SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg")])
 
             SnowballAvatarStack([SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"), SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg")])
+
+            SnowballAvatarStack([SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"), SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"), SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg")])
 
         }
     }

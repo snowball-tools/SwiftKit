@@ -19,7 +19,7 @@
 		0877BFC02A1C195F00A236AB /* SnowballSwiftKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0877BFBF2A1C195F00A236AB /* SnowballSwiftKit */; };
 		08801CBD2A1C438500C98ADF /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 08801CBC2A1C438500C98ADF /* Config.xcconfig */; };
 		08801CBF2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */; };
-		08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarView.swift */; };
+		08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		0877BFBD2A1C192600A236AB /* SnowballSwiftKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SnowballSwiftKit; path = ..; sourceTree = "<group>"; };
 		08801CBC2A1C438500C98ADF /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = SOURCE_ROOT; };
 		08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleNFTView.swift; sourceTree = "<group>"; };
-		08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleAvatarView.swift; sourceTree = "<group>"; };
+		08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleAvatarStackView.swift; sourceTree = "<group>"; };
 		08F1AAB32A1C405500BD4CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +91,7 @@
 				08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */,
 				084672EE2A1C2B8B00C7FB93 /* SnowballSwiftExampleText.swift */,
 				084672F02A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift */,
-				08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarView.swift */,
+				08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */,
 			);
 			path = "Example Views";
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarView.swift in Sources */,
+				08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift in Sources */,
 				0877BF962A1C18D500A236AB /* SnowballSwiftKitHomeView.swift in Sources */,
 				084672F12A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift in Sources */,
 				08801CBF2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift in Sources */,

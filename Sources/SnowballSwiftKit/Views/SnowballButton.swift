@@ -15,7 +15,12 @@ public struct SnowballButton: View {
     var rightSystemIcon: String?
     var action: () -> Void
 
-    public init(leftIcon: String? = nil, leftSystemIcon: String? = nil, text: String? = nil, rightIcon: String? = nil, rightSystemIcon: String? = nil, action: @escaping () -> Void) {
+    public init(leftIcon: String? = nil,
+                leftSystemIcon: String? = nil,
+                text: String? = nil,
+                rightIcon: String? = nil,
+                rightSystemIcon: String? = nil,
+                action: @escaping () -> Void) {
         self.leftIcon = leftIcon
         self.leftSystemIcon = leftSystemIcon
         self.text = text

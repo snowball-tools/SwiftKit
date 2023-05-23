@@ -11,6 +11,7 @@ import SnowballSwiftKit
 struct SnowballSwiftKitHomeView: View {
     // todo: Snowball Settings for app wide settings
     let alchemyKey: String = Bundle.main.infoDictionary?["ALCHEMY_NFT_KEY"] as? String ?? ""
+    @State var switchStateIsOn: Bool = false
 
     var body: some View {
         NavigationView {
@@ -38,9 +39,11 @@ struct SnowballSwiftKitHomeView: View {
                 .disabled(alchemyKey == "" || alchemyKey == "PasteNFTKeyHere")
 
                 NavigationLink("Avatar View") {
-                    SnowballSwiftExampleAvatarView()
+                    SnowballSwiftExampleAvatarStackView()
                         .navigationTitle("Avatar View")
                 }
+
+                SnowballSwitchLabel(isOn: $switchStateIsOn, text: "Switch Text Label", subheadline: "Provide additional context or helpful information.")
             }
             .listStyle(.plain)
             .navigationTitle("Snowball Example")
