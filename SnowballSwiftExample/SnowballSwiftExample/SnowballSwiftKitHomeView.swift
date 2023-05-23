@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SnowballSwiftKit
+import SnowballAssetKit
 
 struct SnowballSwiftKitHomeView: View {
     // todo: Snowball Settings for app wide settings
@@ -55,6 +56,11 @@ struct SnowballSwiftKitHomeView: View {
                     SnowballSwiftExampleToastView()
                         .navigationTitle("Toast View")
                         .padding()
+                }
+
+                HStack {
+                    SnowballImage("SOL")
+                    SnowballImage(.sol)
                 }
             }
             .listStyle(.plain)

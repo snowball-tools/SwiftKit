@@ -22,6 +22,7 @@
 		08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */; };
 		088D74092A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D74082A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift */; };
 		088D740B2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */; };
+		088D740E2A1D3AFB00216FC7 /* SnowballAssetKit in Frameworks */ = {isa = PBXBuildFile; productRef = 088D740D2A1D3AFB00216FC7 /* SnowballAssetKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088D740E2A1D3AFB00216FC7 /* SnowballAssetKit in Frameworks */,
 				0877BFC02A1C195F00A236AB /* SnowballSwiftKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +112,7 @@
 				0877BFA32A1C18D600A236AB /* SnowballSwiftExampleTests */,
 				0877BFAD2A1C18D600A236AB /* SnowballSwiftExampleUITests */,
 				0877BF912A1C18D500A236AB /* Products */,
+				088D740C2A1D3AFB00216FC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +165,13 @@
 			path = SnowballSwiftExampleUITests;
 			sourceTree = "<group>";
 		};
+		088D740C2A1D3AFB00216FC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +190,7 @@
 			name = SnowballSwiftExample;
 			packageProductDependencies = (
 				0877BFBF2A1C195F00A236AB /* SnowballSwiftKit */,
+				088D740D2A1D3AFB00216FC7 /* SnowballAssetKit */,
 			);
 			productName = SnowballSwiftExample;
 			productReference = 0877BF902A1C18D500A236AB /* SnowballSwiftExample.app */;
@@ -643,6 +654,10 @@
 		0877BFBF2A1C195F00A236AB /* SnowballSwiftKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SnowballSwiftKit;
+		};
+		088D740D2A1D3AFB00216FC7 /* SnowballAssetKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SnowballAssetKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

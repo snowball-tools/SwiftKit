@@ -9,7 +9,10 @@ let package = Package(
     products: [
         .library(
             name: "SnowballSwiftKit",
-            targets: ["SnowballSwiftKit"])
+            targets: ["SnowballSwiftKit"]),
+        .library(
+            name: "SnowballAssetKit",
+            targets: ["SnowballAssetKit"])
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.0.0"),
@@ -24,6 +27,10 @@ let package = Package(
             plugins: [
                 .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
             ]
-        )
+        ),
+        .target(
+            name: "SnowballAssetKit",
+            resources: [.process("Resources")]
+        ),
     ]
 )
