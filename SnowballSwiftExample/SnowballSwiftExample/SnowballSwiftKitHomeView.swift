@@ -44,6 +44,12 @@ struct SnowballSwiftKitHomeView: View {
                 }
 
                 SnowballSwitchLabel(isOn: $switchStateIsOn, text: "Switch Text Label", subheadline: "Provide additional context or helpful information.")
+
+                NavigationLink("Input View") {
+                    SnowballSwiftExampleTextInputView()
+                        .navigationTitle("Input View")
+                        .padding()
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Snowball Example")

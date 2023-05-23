@@ -30,4 +30,5 @@ Read more on [Config / Dev Mode](https://nshipster.com/xcconfig/)
 - `SnowballNFTGridView` (in progress)
 - `SnowballNFTListView` (in progress)
 - `SnowballSearchBar` (in progress)
-- `SnowballSwitchLabel` (in progress)t
+- `SnowballSwitchLabel` (in progress)
+
