@@ -16,8 +16,12 @@ Read more on [Config / Dev Mode](https://nshipster.com/xcconfig/)
 
 ## Soon 
 (send me a telegram @vivianphung if u want anything sooner)
-- 'SnowballSettings' for app wide configs
+- `SnowballSettings` for app wide configs
 - Login with wallet / email flow
 - [Custom SF Symbols Collection](https://www.david-smith.org/blog/2023/01/23/design-notes-18/)
 - Snowball Kit documentation site
-- 'SnowballKotlinKit' (for [Jetpack](https://developer.android.com/jetpack))
+- `SnowballKotlinKit` (for [Jetpack](https://developer.android.com/jetpack))
+
+## Documentation
+
+
