@@ -11,7 +11,8 @@ Packages:
 - Easiest way to open -- `SnowballAssetKit` Package, `SnowballSwiftKit` Package and `SnowballSwiftExample` App -- is via the bash script `start` or open `SnowballSwiftExample/SnowballSwiftExample.xcodeproj`
 - [swiftlint](https://github.com/realm/SwiftLint)
     - [apple package manager plugins](https://github.com/apple/swift-package-manager/blob/main/Documentation/Plugins.md)
-    - fix all? `swiftlint --fix`
+    - fix all? `swiftlint --fix` (install via brew @ `brew install swiftlint`)
+    - `.swiftlint.yml` enforce rules
 - Config.xcconfig
     - For now, until an app wide `SnowballSettings` is arch, edit `Config.xcconfig` with API Keys to test out some of the custom views such as `SnowballNFTGridView` and `SnowballNFTListView`. 
     - Read more on [Config / Dev Mode](https://nshipster.com/xcconfig/)
@@ -33,7 +34,6 @@ Creating the `SF Symbols` version of assets is currently pretty manual ([guide](
 
 - What's ready? `sol`, `btc`
 - In works: `eth`, `avax`, `bnb`, `matic`, `atom`, `dot`, `ada`, `algo`, `ftt`, `msol`, `ltc`, `xrp`, `yifi`, `eos`, `ar`, `sec`, `fil`, `trx`, `xtz`, `sushi`, `ape`, `near`, `doge`, `srm`, `gmt`, `crv`, `yfi`, `ftm`, `jewel`, `usdc` and external wallets `metamask`, `phantom`, `walletconnect`, `brave`, `ledger`, `cbWallet`, `trezor`, `trust`, `argent`
-}
 
 use symbols via 
 

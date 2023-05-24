@@ -9,8 +9,10 @@ import Foundation
 
 public enum SnowballIconTypes: String {
     // tokens
-    case sol, bit, eth, avax, bnb, matic, atom, dot, ada, algo, ftt, msol, ltc, xrp, yifi, eos, ar, sec, fil, trx, xtz, sushi, ape, near, doge, srm, gmt, crv, yfi, ftm, jewel, usdc
+    case sol, btc
+    
+//    case eth, avax, bnb, matic, atom, dot, ada, algo, ftt, msol, ltc, xrp, yifi, eos, ar, sec, fil, trx, xtz, sushi, ape, near, doge, srm, gmt, crv, yfi, ftm, jewel, usdc
     
     // external wallets
-    case metamask, phantom, walletconnect, brave, ledger, cbWallet, trezor, trust, argent
+//    case metamask, phantom, walletconnect, brave, ledger, cbWallet, trezor, trust, argent
 }

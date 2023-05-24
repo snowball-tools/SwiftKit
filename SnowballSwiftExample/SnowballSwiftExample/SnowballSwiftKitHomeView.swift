@@ -58,10 +58,12 @@ struct SnowballSwiftKitHomeView: View {
                         .padding()
                 }
 
-                HStack {
-                    SnowballImage("SOL")
-                    SnowballImage(.sol)
+                NavigationLink("SnowballAssetKit Icon Library") {
+                    SnowballSwiftExampleToastView()
+                        .navigationTitle("Toast View")
+                        .padding()
                 }
+
             }
             .listStyle(.plain)
             .navigationTitle("Snowball Example")

@@ -23,6 +23,7 @@
 		088D74092A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D74082A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift */; };
 		088D740B2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */; };
 		088D740E2A1D3AFB00216FC7 /* SnowballAssetKit in Frameworks */ = {isa = PBXBuildFile; productRef = 088D740D2A1D3AFB00216FC7 /* SnowballAssetKit */; };
+		088D74102A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleAvatarStackView.swift; sourceTree = "<group>"; };
 		088D74082A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleTextInputView.swift; sourceTree = "<group>"; };
 		088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleToastView.swift; sourceTree = "<group>"; };
+		088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballAssetExampleIconLibraryView.swift; sourceTree = "<group>"; };
 		08F1AAB32A1C405500BD4CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */,
 				088D74082A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift */,
 				088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */,
+				088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */,
 			);
 			path = "Example Views";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				088D74092A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift in Sources */,
 				0877BF962A1C18D500A236AB /* SnowballSwiftKitHomeView.swift in Sources */,
 				084672F12A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift in Sources */,
+				088D74102A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift in Sources */,
 				08801CBF2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift in Sources */,
 				0877BF942A1C18D500A236AB /* SnowballSwiftExampleApp.swift in Sources */,
 				084672EF2A1C2B8B00C7FB93 /* SnowballSwiftExampleText.swift in Sources */,

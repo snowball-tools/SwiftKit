@@ -13,6 +13,9 @@ struct SnowballAssetKitView: View {
             Image("SOL", bundle: Bundle.module)
             Image(uiImage: SnowballUIImage("SOL"))
             SnowballImage("SOL")
+            SnowballImage(.sol)
+            SnowballImage("BTC")
+            SnowballImage(.btc)
         }
     }
 }
