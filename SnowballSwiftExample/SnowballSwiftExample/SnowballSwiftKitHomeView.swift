@@ -29,38 +29,38 @@ struct SnowballSwiftKitHomeView: View {
 
                 NavigationLink("NFT Grid View") {
                     SnowballSwiftExampleNFTView(alchemyKey: alchemyKey)
-                        .navigationTitle("NFT Grid View")
+                        .navigationTitle("NFT Grid")
                 }
                 .disabled(alchemyKey == "" || alchemyKey == "PasteNFTKeyHere")
 
                 NavigationLink("NFT List View") {
                     SnowballSwiftExampleNFTView(alchemyKey: alchemyKey, type: .list)
-                        .navigationTitle("NFT List View")
+                        .navigationTitle("NFT List")
                 }
                 .disabled(alchemyKey == "" || alchemyKey == "PasteNFTKeyHere")
 
                 NavigationLink("Avatar View (needs a lot of work)") {
                     SnowballSwiftExampleAvatarStackView()
-                        .navigationTitle("Avatar View")
+                        .navigationTitle("Avatars")
                 }
 
                 SnowballSwitchLabel(isOn: $switchStateIsOn, text: "Switch Text Label", subheadline: "Provide additional context or helpful information.")
 
                 NavigationLink("Input View") {
                     SnowballSwiftExampleTextInputView()
-                        .navigationTitle("Input View")
+                        .navigationTitle("Inputs")
                         .padding()
                 }
 
                 NavigationLink("Toast View") {
                     SnowballSwiftExampleToastView()
-                        .navigationTitle("Toast View")
+                        .navigationTitle("Toasts")
                         .padding()
                 }
 
                 NavigationLink("SnowballAssetKit Icon Library") {
-                    SnowballSwiftExampleToastView()
-                        .navigationTitle("Toast View")
+                    SnowballAssetExampleIconLibraryView()
+                        .navigationTitle("SnowballAssetKit")
                         .padding()
                 }
 

@@ -8,17 +8,17 @@
 import SwiftUI
 
 public struct SnowballButton: View {
+    var text: String?
     var leftIcon: String?
     var leftSystemIcon: String?
-    var text: String?
     var rightIcon: String?
     var rightSystemIcon: String?
     var action: () -> Void
     var spacing: CGFloat
 
-    public init(leftIcon: String? = nil,
+    public init(_ text: String? = nil,
+                leftIcon: String? = nil,
                 leftSystemIcon: String? = nil,
-                _ text: String? = nil,
                 rightIcon: String? = nil,
                 rightSystemIcon: String? = nil,
                 action: @escaping () -> Void,
@@ -58,7 +58,8 @@ public struct SnowballButton: View {
 struct SnowballButton_Previews: PreviewProvider {
     static var previews: some View {
         SnowballButton("hello") {
-            "blah"
+            print("blah test tap")
         }
+        .buttonStyle(.snowballDanger(.large))
     }
 }
