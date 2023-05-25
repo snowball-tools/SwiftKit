@@ -18,26 +18,14 @@ public struct SnowballAvatarStack: View {
 
     public var body: some View {
         HStack(spacing: -20) {
-            ForEach(Array(zip(avatars.indices, avatars)), id: \.0) { _, item in
-                AsyncImage(url: item.image) { image in
-                    SnowballAvatar(image: image)
-                } placeholder: {
-                    SnowballAvatar(image: Image(systemName: "person.crop.circle"))
-                }
+            ForEach(Array(zip(colors.indices, colors)), id: \.0) { _, item in
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .foregroundColor(item)
             }
         }
-    }
-}
-
-struct SnowballAvatarStack_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            SnowballAvatarStack([SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg")])
-
-            SnowballAvatarStack([SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"), SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg")])
-
-            SnowballAvatarStack([SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"), SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"), SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg")])
-
-        }
+        .padding(10)
     }
 }
