@@ -35,7 +35,7 @@ struct SnowballSwiftExampleButtonsView: View {
                 self.tappedButtonString = "clipboard text only"
             }
             .buttonStyle(.snowballTinted)
-            
+
             SnowballButton(leftSystemIcon: "clipboard", "clipboard", rightSystemIcon: "clipboard") {
                 self.tappedButtonString = "clipboard with *left and right* icon and text"
             }

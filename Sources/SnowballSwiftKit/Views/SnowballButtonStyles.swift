@@ -10,7 +10,7 @@ import SnowballAssetKit
 
 public enum SnowballButtonSize {
     case small, large
-    
+
     var edgeInsets: EdgeInsets {
         switch self {
         case .small:
@@ -38,14 +38,13 @@ public struct SnowballButtonStyle: ButtonStyle {
 
 public extension ButtonStyle where Self == SnowballButtonStyle {
     static var snowballTinted: Self { .init(color: SnowballColor.tintedButton, foregroundColor: SnowballColor.tintedButtonForeground, buttonSize: .small) }
-    
+
     static var snowballFilled: Self { .init(color: SnowballColor.filledButton, foregroundColor: SnowballColor.filledButtonForeground, buttonSize: .small) }
     static var snowballDanger: Self { .init(color: SnowballColor.dangerButton, foregroundColor: SnowballColor.dangerButtonForeground, buttonSize: .small) }
-
 
     static func snowballFilled(color: Color, buttonSize: SnowballButtonSize) -> Self { .init(color: color, foregroundColor: SnowballColor.filledButtonForeground, buttonSize: buttonSize) }
     static func snowballFilled(color: Color) -> Self { .init(color: color, foregroundColor: SnowballColor.filledButtonForeground, buttonSize: .small) }
     static func snowballFilled(buttonSize: SnowballButtonSize) -> Self { .init(color: SnowballColor.filledButton, foregroundColor: SnowballColor.filledButtonForeground, buttonSize: .small) }
-    
+
     static func snowballDanger(_ buttonSize: SnowballButtonSize) -> Self { .init(color: SnowballColor.dangerButton, foregroundColor: SnowballColor.dangerButtonForeground, buttonSize: .small) }
 }

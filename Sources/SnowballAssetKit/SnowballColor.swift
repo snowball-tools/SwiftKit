@@ -8,10 +8,22 @@
 import SwiftUI
 
 public struct SnowballColor {
-    public static let filledButton = Color("filledButton")
-    public static let filledButtonForeground = Color("filledButtonForeground")
-    public static let tintedButton = Color("tintedButton")
-    public static let tintedButtonForeground = Color("tintedButtonForeground")
-    public static let dangerButton = Color("dangerButton")
-    public static let dangerButtonForeground = Color("dangerButtonForeground")
+    public static let filledButton = Color(UIColor(named: "filledButton",
+                                            in: Bundle.module,
+                                            compatibleWith: nil)!)
+    public static let filledButtonForeground = Color(UIColor(named: "filledButtonForeground",
+                                                      in: Bundle.module,
+                                                      compatibleWith: nil)!)
+    public static let tintedButton = Color(UIColor(named: "tintedButton",
+                                            in: Bundle.module,
+                                            compatibleWith: nil)!)
+    public static let tintedButtonForeground = Color(UIColor(named: "tintedButtonForeground",
+                                                      in: Bundle.module,
+                                                      compatibleWith: nil)!)
+    public static let dangerButton = Color(UIColor(named: "dangerButton",
+                                            in: Bundle.module,
+                                            compatibleWith: nil)!)
+    public static let dangerButtonForeground = Color(UIColor(named: "dangerButtonForeground",
+                                                      in: Bundle.module,
+                                                      compatibleWith: nil)!)
 }

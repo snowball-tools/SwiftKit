@@ -29,8 +29,7 @@ let package = Package(
         ),
         .target(
             name: "SnowballAssetKit",
-            resources: [.process("Resources"),
-                        .process("SnowballColors.xcassets")]
+            resources: [.process("Resources")]
         ),
     ]
 )
