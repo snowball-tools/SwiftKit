@@ -14,8 +14,8 @@ public struct SnowballTextInput: View {
     var rightIcon: String?
     var rightSystemIcon: String?
     var emptyStateText: String
-    var labelText: String?
-    var subheadlineText: String?
+    var title: String?
+    var subtitle: String?
 
     public init(_ text: Binding<String>,
                 leftIcon: String? = nil,
@@ -23,33 +23,24 @@ public struct SnowballTextInput: View {
                 rightIcon: String? = nil,
                 rightSystemIcon: String? = nil,
                 emptyStateText: String = "Text",
-                labelText: String? = nil,
-                subheadlineText: String? = nil) {
+                title: String? = nil,
+                subtitle: String? = nil) {
         self._text = text
         self.leftIcon = leftIcon
         self.leftSystemIcon = leftSystemIcon
         self.rightIcon = rightIcon
         self.rightSystemIcon = rightSystemIcon
         self.emptyStateText = emptyStateText
-        self.labelText = labelText
-        self.subheadlineText = subheadlineText
+        self.title = title
+        self.subtitle = subtitle
     }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            VStack(alignment: .leading, spacing: 4) {
-                if let labelText = labelText {
-                    Text(labelText)
-                        .font(.body)
-                }
-
-                if let subHeadlineText = subheadlineText {
-                    Text(subHeadlineText)
-                        .font(.footnote)
-                        .foregroundColor(Color.secondary)
-                }
+            if let labelText = title {
+                SnowballTitleLabel(title: labelText, subtitle: subtitle)
+                    .padding(EdgeInsets( top: 0, leading: 4, bottom: 0, trailing: 0))
             }
-            .padding(EdgeInsets( top: 0, leading: 4, bottom: 0, trailing: 0))
 
             HStack {
                 if let leftIcon = leftIcon {

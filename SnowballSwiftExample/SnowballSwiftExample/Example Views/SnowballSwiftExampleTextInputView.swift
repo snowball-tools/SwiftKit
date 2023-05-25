@@ -25,19 +25,9 @@ struct SnowballSwiftExampleTextInputView: View {
 
             SnowballTextInput($textInput, emptyStateText: "Empty state text")
             
-            SnowballTextInput($textInput, labelText: "hello")
+            SnowballTextInput($textInput, title: "hello")
             
-            SnowballTextInput($textInput, labelText: "Label", subheadlineText: "Provide additional context or helpful information.")
-            
-//            Text("Apple's TextField")
-//            TextField("DefaultTextFieldStyle", text: $textInput)
-//                .textFieldStyle(DefaultTextFieldStyle())
-//
-//            TextField("PlainTextFieldStyle", text: $textInput)
-//                .textFieldStyle(PlainTextFieldStyle())
-//
-//            TextField("RoundedBorderTextFieldStyle", text: $textInput)
-//                .textFieldStyle(RoundedBorderTextFieldStyle())
+            SnowballTextInput($textInput, title: "Label", subtitle: "Provide additional context or helpful information.")
         }
     }
 }

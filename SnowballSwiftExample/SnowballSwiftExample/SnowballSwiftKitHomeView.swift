@@ -26,6 +26,11 @@ struct SnowballSwiftKitHomeView: View {
                     SnowballSwiftExampleButtonsView()
                         .navigationTitle("Buttons")
                 }
+                
+                NavigationLink("Title Label") {
+                    SnowballSwiftExampleTitleLabelView()
+                        .navigationTitle("Title Label")
+                }
 
                 NavigationLink("NFT Grid View") {
                     SnowballSwiftExampleNFTView(alchemyKey: alchemyKey)
@@ -44,7 +49,7 @@ struct SnowballSwiftKitHomeView: View {
                         .navigationTitle("Avatars")
                 }
 
-                SnowballSwitchLabel(isOn: $switchStateIsOn, text: "Switch Text Label", subheadline: "Provide additional context or helpful information.")
+                SnowballSwitch(isOn: $switchStateIsOn, title: "Switch Text Label", subtitle: "Provide additional context or helpful information.")
 
                 NavigationLink("Input View") {
                     SnowballSwiftExampleTextInputView()
@@ -63,7 +68,6 @@ struct SnowballSwiftKitHomeView: View {
                         .navigationTitle("SnowballAssetKit")
                         .padding()
                 }
-
             }
             .listStyle(.plain)
             .navigationTitle("Snowball Example")

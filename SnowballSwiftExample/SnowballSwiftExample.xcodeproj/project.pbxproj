@@ -24,6 +24,7 @@
 		088D740B2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */; };
 		088D740E2A1D3AFB00216FC7 /* SnowballAssetKit in Frameworks */ = {isa = PBXBuildFile; productRef = 088D740D2A1D3AFB00216FC7 /* SnowballAssetKit */; };
 		088D74102A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */; };
+		088D74122A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D74112A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		088D74082A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleTextInputView.swift; sourceTree = "<group>"; };
 		088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleToastView.swift; sourceTree = "<group>"; };
 		088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballAssetExampleIconLibraryView.swift; sourceTree = "<group>"; };
+		088D74112A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleTitleLabelView.swift; sourceTree = "<group>"; };
 		08F1AAB32A1C405500BD4CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				088D74082A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift */,
 				088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */,
 				088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */,
+				088D74112A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift */,
 			);
 			path = "Example Views";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088D74122A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift in Sources */,
 				08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift in Sources */,
 				088D74092A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift in Sources */,
 				0877BF962A1C18D500A236AB /* SnowballSwiftKitHomeView.swift in Sources */,
