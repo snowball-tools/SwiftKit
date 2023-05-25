@@ -17,17 +17,12 @@ public struct SnowballAvatarStack: View {
     }
 
     public var body: some View {
-        ZStack {
-            GeometryReader { geometry in
-                HStack(spacing: -(geometry.size.width / CGFloat(avatars.count + 1)) + 100) {
-                    ForEach(Array(zip(avatars.indices, avatars)), id: \.0) { _, item in
-                        AsyncImage(url: item.image) { image in
-                            SnowballAvatar(image: image)
-                        } placeholder: {
-                            SnowballAvatar(image: Image(systemName: "person.crop.circle"))
-                        }
-                        .frame(width: geometry.size.width / CGFloat(avatars.count + 1))
-                    }
+        HStack(spacing: -20) {
+            ForEach(Array(zip(avatars.indices, avatars)), id: \.0) { _, item in
+                AsyncImage(url: item.image) { image in
+                    SnowballAvatar(image: image)
+                } placeholder: {
+                    SnowballAvatar(image: Image(systemName: "person.crop.circle"))
                 }
             }
         }

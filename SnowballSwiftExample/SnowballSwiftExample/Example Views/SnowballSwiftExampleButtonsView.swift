@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SnowballSwiftKit
+import SnowballAssetKit
 
 struct SnowballSwiftExampleButtonsView: View {
     @State var tappedButtonString: String = ""
@@ -21,55 +22,25 @@ struct SnowballSwiftExampleButtonsView: View {
                 self.tappedButtonString = "clipboard icon only"
             }
 
-            SnowballButton(leftSystemIcon: "clipboard", text: "clipboard") {
+            SnowballButton(leftSystemIcon: "clipboard", "clipboard") {
                 self.tappedButtonString = "clipboard with *left* icon and text"
             }
+            .buttonStyle(.snowballDanger)
 
-            SnowballButton(text: "clipboard", rightSystemIcon: "clipboard") {
+            SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                 self.tappedButtonString = "clipboard with *right* icon and text"
             }
 
-            SnowballButton(text: "clipboard") {
+            SnowballButton("clipboard") {
                 self.tappedButtonString = "clipboard text only"
             }
-
-            Spacer()
-            VStack(alignment: .leading) {
-                Text("ex. ButtonStyle")
-                HStack {
-                    Button("danger", action: {
-                        self.tappedButtonString = "danger"
-                    })
-                    .buttonStyle(.danger)
-
-                    Button("plain", action: {
-                        self.tappedButtonString = "plain"
-                    })
-                    .buttonStyle(.plain)
-
-                    Button("bordered", action: {
-                        self.tappedButtonString = "bordered"
-                    })
-                    .buttonStyle(.bordered)
-                }
+            .buttonStyle(.snowballTinted)
+            
+            SnowballButton(leftSystemIcon: "clipboard", "clipboard", rightSystemIcon: "clipboard") {
+                self.tappedButtonString = "clipboard with *left and right* icon and text"
             }
+            .buttonStyle(.snowballFilled)
 
-            Spacer()
-
-            VStack(alignment: .leading) {
-                Text("SwiftUI understands context")
-                HStack {
-                    Button("styled 'Button'", action: {
-                        self.tappedButtonString = "styled button"
-                    })
-                    .buttonStyle(.danger)
-
-                    SnowballButton(text: "styled 'SnowballButton'") {
-                        self.tappedButtonString = "styled snowball 'button'"
-                    }
-                    .buttonStyle(.danger)
-                }
-            }
         }
     }
 }

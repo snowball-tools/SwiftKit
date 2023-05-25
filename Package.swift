@@ -22,15 +22,15 @@ let package = Package(
         .target(
             name: "SnowballSwiftKit",
             dependencies: [
-                "Alamofire"
+                "Alamofire",
+                "SnowballAssetKit"
             ],
-            plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
-            ]
+            plugins: [.plugin(name: "SwiftLintPlugin", package: "SwiftLint")]
         ),
         .target(
             name: "SnowballAssetKit",
-            resources: [.process("Resources")]
+            resources: [.process("Resources"),
+                        .process("SnowballColors.xcassets")]
         ),
     ]
 )
