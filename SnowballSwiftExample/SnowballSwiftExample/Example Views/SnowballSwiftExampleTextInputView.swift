@@ -15,25 +15,29 @@ struct SnowballSwiftExampleTextInputView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("SnowballTextInput")
-            SnowballTextInput(text: $textInput)
+            SnowballTextInput($textInput)
 
-            SnowballTextInput(text: $nonEmptyTextInput)
+            SnowballTextInput($nonEmptyTextInput)
 
-            SnowballTextInput(text: $textInput, rightSystemIcon: "clipboard")
+            SnowballTextInput($textInput, rightSystemIcon: "clipboard")
 
-            SnowballTextInput(leftSystemIcon: "clipboard", text: $textInput)
+            SnowballTextInput($textInput, leftSystemIcon: "clipboard")
 
-            SnowballTextInput(text: $textInput, emptyStateText: "Empty state text changed")
-
-            Text("Apple's TextField")
-            TextField("DefaultTextFieldStyle", text: $textInput)
-                .textFieldStyle(DefaultTextFieldStyle())
-
-            TextField("PlainTextFieldStyle", text: $textInput)
-                .textFieldStyle(PlainTextFieldStyle())
-
-            TextField("RoundedBorderTextFieldStyle", text: $textInput)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            SnowballTextInput($textInput, emptyStateText: "Empty state text")
+            
+            SnowballTextInput($textInput, labelText: "hello")
+            
+            SnowballTextInput($textInput, labelText: "Label", subheadlineText: "Provide additional context or helpful information.")
+            
+//            Text("Apple's TextField")
+//            TextField("DefaultTextFieldStyle", text: $textInput)
+//                .textFieldStyle(DefaultTextFieldStyle())
+//
+//            TextField("PlainTextFieldStyle", text: $textInput)
+//                .textFieldStyle(PlainTextFieldStyle())
+//
+//            TextField("RoundedBorderTextFieldStyle", text: $textInput)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
         }
     }
 }
