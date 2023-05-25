@@ -5,13 +5,15 @@
 //  Created by Vivian Phung on 5/1/23.
 //
 
-import Foundation
 import SwiftUI
+import Nuke
+import NukeUI
 
 // todo: snowball settings
 public struct SnowballNFTGridView: View {
+    @State private var listId = UUID()
     @StateObject private var viewModel = AlchemyNFTViewModel()
-    @State var ethAddress: String
+    var ethAddress: String
 
     // todo: snowball settings with api key
     var alchemyKey: String
@@ -25,6 +27,14 @@ public struct SnowballNFTGridView: View {
         self.ethAddress = ethAddress
         self.alchemyKey = alchemyKey
     }
+    
+    private let pipeline = ImagePipeline {
+        $0.dataLoader = {
+            let config = URLSessionConfiguration.default
+            config.urlCache = nil
+            return DataLoader(configuration: config)
+        }()
+    }
 
     public var body: some View {
         ScrollView {
@@ -32,7 +42,7 @@ public struct SnowballNFTGridView: View {
                 LazyVGrid(columns: gridLayout, spacing: 10) {
                     ForEach(viewModel.nfts) { nft in
                             VStack(alignment: .leading) {
-                                AsyncImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg"))
+                                makeImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!)
                                 Text(nft.title)
                                     .font(.caption)
                                     .lineLimit(1)
@@ -45,10 +55,36 @@ public struct SnowballNFTGridView: View {
                         }
                 }
                 .padding(10)
+                .navigationBarItems(trailing: Button(action: {
+                    ImagePipeline.shared.cache.removeAll()
+                    self.listId = UUID()
+                }, label: {
+                    Image(systemName: "arrow.clockwise")
+                }))
+                .listStyle(.plain)
+                .onAppear {
+                    viewModel.fetchNFTs(forAddress: ethAddress, key: alchemyKey)
+                }
             }
             .onAppear {
                 viewModel.fetchNFTs(forAddress: self.ethAddress, key: alchemyKey)
             }
         }
+    }
+    
+    // This is where the image view is created.
+    func makeImage(url: URL) -> some View {
+        LazyImage(url: url) { state in
+            if let container = state.imageContainer, container.type ==  .gif, let data = container.data {
+                GIFImage(data: data)
+            } else if let image = state.image {
+                image
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Color.gray.opacity(0.2) // Placeholder
+            }
+        }
+            .pipeline(pipeline)
     }
 }
