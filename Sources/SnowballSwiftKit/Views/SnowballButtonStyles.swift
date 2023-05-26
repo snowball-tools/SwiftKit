@@ -31,7 +31,7 @@ public struct SnowballButtonStyle: ButtonStyle {
             .padding(buttonSize.edgeInsets)
             .background(color)
             .foregroundColor(foregroundColor)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .cornerRadius(12)
     }
 }
 
