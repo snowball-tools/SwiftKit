@@ -37,28 +37,29 @@ public struct SnowballButtonStyle: ButtonStyle {
 
 public extension ButtonStyle where Self == SnowballButtonStyle {
     // tinted
-    static var snowballTinted: Self { .init(color: SnowballColor.tintedButton,
-                                            foregroundColor: SnowballColor.tintedButtonForeground,
+    static var snowballTinted: Self { .init(color: SnowballColor.tintedButton.color,
+                                            foregroundColor: SnowballColor.tintedButtonForeground.color,
                                             buttonSize: .small) }
-    static func snowballTinted(_ buttonSize: SnowballButtonSize) -> Self { .init(color: SnowballColor.tintedButton,
-                                                                                 foregroundColor: SnowballColor.tintedButtonForeground,
+    static func snowballTinted(_ buttonSize: SnowballButtonSize) -> Self { .init(color: SnowballColor.tintedButton.color,
+                                                                                 foregroundColor: SnowballColor.tintedButtonForeground.color,
                                                                                  buttonSize: buttonSize) }
 
     // filled
-    static var snowballFilled: Self { .init(color: SnowballColor.filledButton,
-                                            foregroundColor: SnowballColor.filledButtonForeground,
+    static var snowballFilled: Self { .init(color: SnowballColor.filledButton.color
+                                            ,
+                                            foregroundColor: SnowballColor.filledButtonForeground.color,
                                             buttonSize: .small) }
-    static func snowballFilled(color: Color = SnowballColor.filledButton,
-                               foregroundColor: Color = SnowballColor.filledButtonForeground,
+    static func snowballFilled(color: Color = SnowballColor.filledButton.color,
+                               foregroundColor: Color = SnowballColor.filledButtonForeground.color,
                                buttonSize: SnowballButtonSize = .small) -> Self { .init(color: color,
                                                                                         foregroundColor: foregroundColor,
                                                                                         buttonSize: buttonSize) }
     
     // danger
-    static var snowballDanger: Self { .init(color: SnowballColor.dangerButton,
-                                            foregroundColor: SnowballColor.dangerButtonForeground,
+    static var snowballDanger: Self { .init(color: SnowballColor.dangerButton.color,
+                                            foregroundColor: SnowballColor.dangerButtonForeground.color,
                                             buttonSize: .small) }
-    static func snowballDanger(_ buttonSize: SnowballButtonSize) -> Self { .init(color: SnowballColor.dangerButton,
-                                                                                 foregroundColor: SnowballColor.dangerButtonForeground,
+    static func snowballDanger(_ buttonSize: SnowballButtonSize) -> Self { .init(color: SnowballColor.dangerButton.color,
+                                                                                 foregroundColor: SnowballColor.dangerButtonForeground.color,
                                                                                  buttonSize: buttonSize) }
 }

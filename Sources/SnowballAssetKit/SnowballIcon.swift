@@ -32,4 +32,6 @@ public enum SnowballIcon: String, CaseIterable, Identifiable {
     public var assetName: String {
         self.type == .wallet ? self.rawValue + "_circle" : self.rawValue.uppercased()
     }
+    
+    
 }
