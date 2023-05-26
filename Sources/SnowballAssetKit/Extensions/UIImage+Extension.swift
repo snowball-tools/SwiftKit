@@ -11,6 +11,6 @@ public func SnowballUIImage(_ name: String) -> UIImage {
     UIImage(named: name, in: Bundle.module, compatibleWith: nil)!
 }
 
-public func SnowballUIImage(_ type: SnowballIconTypes) -> UIImage {
-    SnowballUIImage(type.rawValue.uppercased())
+public func SnowballUIImage(_ type: SnowballIcon) -> UIImage {
+    SnowballUIImage(type.assetName)
 }

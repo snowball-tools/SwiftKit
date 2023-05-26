@@ -10,17 +10,17 @@ import SnowballAssetKit
 
 struct SnowballAssetExampleIconLibraryView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                SnowballImage(.sol)
-                Divider().frame(height: 20)
-                Text("SnowballImage(.sol)")
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                ForEach(SnowballIcon.allCases) { type in
+                    HStack {
+                        SnowballImage(type)
+                        Divider().frame(height: 20)
+                        Text("SnowballImage(.\(type.rawValue))")
+                    }
+                }
             }
-            HStack {
-                SnowballImage("SOL")
-                Divider().frame(height: 20)
-                Text("SnowballImage(\"SOL\")")
-            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

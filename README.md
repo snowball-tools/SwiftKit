@@ -28,25 +28,6 @@ Packages:
 - Snowball Kit documentation site
 - `SnowballKotlinKit` (for [Jetpack](https://developer.android.com/jetpack))
 
-## `SnowballAssetKit` Documentation
-
-Creating the `SF Symbols` version of assets is currently pretty manual ([guide](https://www.david-smith.org/blog/2023/01/23/design-notes-18/)). Looking into automating using a figma extension (worst case python since its an svg)
-
-- What's ready? `sol`, `btc`
-- In works: `eth`, `avax`, `bnb`, `matic`, `atom`, `dot`, `ada`, `algo`, `ftt`, `msol`, `ltc`, `xrp`, `yifi`, `eos`, `ar`, `sec`, `fil`, `trx`, `xtz`, `sushi`, `ape`, `near`, `doge`, `srm`, `gmt`, `crv`, `yfi`, `ftm`, `jewel`, `usdc` and external wallets `metamask`, `phantom`, `walletconnect`, `brave`, `ledger`, `cbWallet`, `trezor`, `trust`, `argent`
-
-use symbols via 
-
-```
-// SwiftUI
-SnowballImage("SOL") 
-SnowballImage(.sol) 
-
-// UIKit
-SnowballUIImage("SOL")
-SnowballUIImage(.sol)
-```
-
 ## `SnowballSwiftKit` Documentation
 
 V0 (rough rough start) are ready! 
@@ -61,3 +42,24 @@ V0 (rough rough start) are ready!
 - `SnowballTextInput`
 - `SnowballToastView`
     - `SnowballToastType`: `error`, `warning`, `neutral`, `positive`
+
+## `SnowballAssetKit` Documentation
+
+Asset library of common token symbols and external wallets
+- token symbols: `sol`, `btc`, `eth`, `avax`, `bnb`, `matic`, `atom`, `dot`, `ada`, `algo`, `ftt`, `msol`, `ltc`, `xrp`, `yifi`, `eos`, `ar`, `sec`, `fil`, `trx`, `xtz`, `sushi`, `ape`, `near`, `doge`, `srm`, `gmt`, `crv`, `ftm`, `jewel`, `usdc`
+- external wallets: `metamask`, `phantom`, `walletConnect`, `brave`, `ledger`, `coinbaseWallet`, `trezor`, `trust`, `argent`
+
+use symbols via 
+
+```
+// SwiftUI
+SnowballImage(.sol) 
+or
+- tokens: `SnowballImage("SOL")`
+- external wallets: `SnowballImage("metamask_circle")`, `SnowballImage("metamask_icon")`, or `SnowballImage("metamask_square")`
+
+// UIKit
+SnowballUIImage(.sol)
+- tokens: `SnowballUIImage("SOL")`
+- external wallets: `SnowballUIImage("metamask_circle")`, `SnowballUIImage("metamask_icon")`, or `SnowballUIImage("metamask_square")`
+```

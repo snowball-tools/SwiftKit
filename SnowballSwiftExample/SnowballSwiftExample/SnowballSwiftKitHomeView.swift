@@ -65,8 +65,8 @@ struct SnowballSwiftKitHomeView: View {
 
                 NavigationLink("SnowballAssetKit Icon Library") {
                     SnowballAssetExampleIconLibraryView()
-                        .navigationTitle("SnowballAssetKit")
-                        .padding()
+                        .navigationTitle("SnowballAssetKit Icons")
+                        .padding(.horizontal)
                 }
             }
             .listStyle(.plain)

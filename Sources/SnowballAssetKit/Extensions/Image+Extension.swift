@@ -12,6 +12,6 @@ public func SnowballImage(_ name: String) -> Image {
     Image(uiImage: SnowballUIImage(name))
 }
 
-public func SnowballImage(_ type: SnowballIconTypes) -> Image {
-    SnowballImage(type.rawValue.uppercased())
+public func SnowballImage(_ type: SnowballIcon) -> Image {
+    SnowballImage(type.assetName)
 }
