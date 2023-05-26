@@ -39,14 +39,14 @@ V0 (rough rough start) are ready!
 - `SnowballNFTListView`
 - `SnowballSearchBar`
 - `SnowballSwitchLabel`
-<img src="Screenshots/Switch.PNG" alt="Switch" width="200">
+<img src="Screenshots/Switch.png" alt="Switch" width="200">
 - `SnowballTextInput`
-<img src="Screenshots/Inputs.PNG" alt="Input Label" width="200">
+<img src="Screenshots/Inputs.png" alt="Input Label" width="200">
 - `SnowballToastView`
     - `SnowballToastType`: `error`, `warning`, `neutral`, `positive`
-<img src="Screenshots/Toasts.PNG" alt="Toast" width="200"><img src="Screenshots/ToastSubtitle.PNG" alt="Toast w subtitle" width="200">
+<img src="Screenshots/Toasts.png" alt="Toast" width="200"><img src="Screenshots/ToastSubtitle.png" alt="Toast w subtitle" width="200">
 - `SnowballTitleLabel`
-<img src="Screenshots/TitleLabel.PNG" alt="Title label" width="200">
+<img src="Screenshots/TitleLabel.png" alt="Title label" width="200">
 
 
 ## `SnowballAssetKit` Documentation
@@ -70,4 +70,4 @@ SnowballUIImage(.sol)
 - external wallets: `SnowballUIImage("metamask_circle")`, `SnowballUIImage("metamask_icon")`, or `SnowballUIImage("metamask_square")`
 ```
 
-<img src="Screenshots/Icons.PNG" alt="Icons" width="200">
+<img src="Screenshots/Icons.png" alt="Icons" width="200">
