@@ -39,19 +39,21 @@ V0 (rough rough start) are ready!
 - `SnowballNFTListView`
 - `SnowballSearchBar`
 - `SnowballSwitchLabel`
-<img src="Screenshots/Switch.png" alt="Switch" width="300">
+<br><img src="Screenshots/Switch.png" alt="Switch" width="400">
+
 - `SnowballTextInput`
-<img src="Screenshots/Inputs.png" alt="Input Label" width="300">
+<br><img src="Screenshots/Inputs.png" alt="Input Label" width="400">
+
 - `SnowballToastView`
     - `SnowballToastType`: `error`, `warning`, `neutral`, `positive`
-<img src="Screenshots/Toasts.png" alt="Toast" width="300"><img src="Screenshots/ToastSubtitle.png" alt="Toast w subtitle" width="300">
-- `SnowballTitleLabel`
-<img src="Screenshots/TitleLabel.png" alt="Title label" width="300">
+    
+<br><img src="Screenshots/Toasts.png" alt="Toast" width="400"><img src="Screenshots/ToastSubtitle.png" alt="Toast w subtitle" width="400">
 
+- `SnowballTitleLabel`
+<br><img src="Screenshots/TitleLabel.png" alt="Title label" width="400">
 
 ## `SnowballAssetKit` Documentation
-
-<img src="Screenshots/Icons.png" alt="Icons" width="400">
+<br><img src="Screenshots/Icons.png" alt="Icons" width="600">
 
 Asset library of common token symbols and external wallets
 - token symbols: `sol`, `btc`, `eth`, `avax`, `bnb`, `matic`, `atom`, `dot`, `ada`, `algo`, `ftt`, `msol`, `ltc`, `xrp`, `yifi`, `eos`, `ar`, `sec`, `fil`, `trx`, `xtz`, `sushi`, `ape`, `near`, `doge`, `srm`, `gmt`, `crv`, `ftm`, `jewel`, `usdc`
