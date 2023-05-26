@@ -39,44 +39,33 @@ public enum SnowballToastType: String {
 
 public struct SnowballToastView: View {
     var type: SnowballToastType
-    var text: String
+    var title: String
     var subtitle: String?
 
     public init(type: SnowballToastType,
-                text: String,
-                subTitle: String? = nil) {
+                title: String,
+                subtitle: String? = nil) {
         self.type = type
-        self.text = text
-        self.subtitle = subTitle
+        self.title = title
+        self.subtitle = subtitle
     }
 
     public var body: some View {
-        HStack {
-            HStack(alignment: (subtitle != nil) ? .top : .center, spacing: 8) {
-                Image(systemName: type.systemName)
-                    .font(.subheadline)
-                    .foregroundColor(type.backgroundColor)
-                    .offset(y: (subtitle != nil) ? 2 : 0)
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(text)
-                        .font(.footnote)
-                        .bold()
-                    if let subTitle = subtitle {
-                        Text(subTitle)
-                            .font(.caption)
-                            .foregroundColor(Color.secondary)
-                    }
-                }
-            }
-            .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Image(systemName: type.systemName)
+                .font(.subheadline)
+                .foregroundColor(type.backgroundColor)
+                .frame(height: 24)
 
-            Spacer()
+            SnowballTitleLabel(title: title, subtitle: subtitle, spacing: 4, font: .subheadline)
+                .alignmentGuide(.firstTextBaseline) { d in d[.firstTextBaseline] + 2 }
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color(UIColor.separator), lineWidth: 1)
-                .shadow(color: Color(UIColor.separator), radius: 10, x: 3, y: 1)
-        )
-
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .padding(.all, 12)
+        .background(Color(uiColor: UIColor.systemBackground))
+        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color(uiColor: .separator), lineWidth: 1))
+        .cornerRadius(12)
+        .shadow(color: Color.primary.opacity(0.06), radius: 10, x: 0, y: 3)
+        .shadow(color: Color.primary.opacity(0.04), radius: 3, x: 0, y: 1)
     }
 }

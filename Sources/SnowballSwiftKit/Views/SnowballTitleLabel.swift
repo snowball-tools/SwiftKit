@@ -11,19 +11,22 @@ public struct SnowballTitleLabel: View {
     let title: String
     let subtitle: String?
     let spacing: CGFloat
+    let font: Font
 
     public init(title: String,
                 subtitle: String? = nil,
-                spacing: CGFloat = 4) {
+                spacing: CGFloat = 4,
+                font: Font = .body) {
         self.title = title
         self.subtitle = subtitle
         self.spacing = spacing
+        self.font = font
     }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: spacing) {
             Text(title)
-                .font(.body)
+                .font(font)
 
             if let subtitle = subtitle {
                 Text(subtitle)
