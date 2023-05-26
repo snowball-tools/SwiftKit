@@ -21,3 +21,10 @@ public struct SnowballAvatar: View {
             .clipShape(Circle())
     }
 }
+
+struct SnowballAvatar_Previews: PreviewProvider {
+    static var previews: some View {
+        SnowballAvatar(image: Image(systemName: "person.circle"))
+            .padding()
+    }
+}

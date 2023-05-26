@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct SnowballButton: View {
-    var text: String?
+    var title: String?
     var leftIcon: String?
     var leftSystemIcon: String?
     var rightIcon: String?
@@ -25,7 +25,7 @@ public struct SnowballButton: View {
                 spacing: CGFloat = 4) {
         self.leftIcon = leftIcon
         self.leftSystemIcon = leftSystemIcon
-        self.text = text
+        self.title = text
         self.rightIcon = rightIcon
         self.rightSystemIcon = rightSystemIcon
         self.action = action
@@ -41,7 +41,7 @@ public struct SnowballButton: View {
                 if let leftSystemIcon = leftSystemIcon {
                     Image(systemName: leftSystemIcon)
                 }
-                if let text = text {
+                if let text = title {
                     Text(text)
                 }
                 if let rightIcon = rightIcon {
@@ -50,6 +50,39 @@ public struct SnowballButton: View {
                 if let rightSystemIcon = rightSystemIcon {
                     Image(systemName: rightSystemIcon)
                 }
+            }
+        }
+    }
+}
+
+struct SnowballButton_Previews: PreviewProvider {
+    static var previews: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                SnowballButton("Button") {
+                    print("Button")
+                }
+                .buttonStyle(.snowballFilled)
+
+                SnowballButton("Button", leftSystemIcon: "person.circle") {
+                    print("Button")
+                }
+                .buttonStyle(.snowballFilled)
+
+                SnowballButton("Button", leftSystemIcon: "person.circle", rightSystemIcon: "person.circle") {
+                    print("Button")
+                }
+                .buttonStyle(.snowballFilled)
+
+                SnowballButton("Button", rightSystemIcon: "person.circle") {
+                    print("Button")
+                }
+                .buttonStyle(.snowballFilled)
+
+                SnowballButton("Button", rightSystemIcon: "person.circle") {
+                    print("Button")
+                }
+                .buttonStyle(.snowballFilled(buttonSize: .large))
             }
         }
     }

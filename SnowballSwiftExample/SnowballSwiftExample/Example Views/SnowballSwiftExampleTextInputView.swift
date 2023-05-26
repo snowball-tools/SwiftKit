@@ -26,7 +26,7 @@ struct SnowballSwiftExampleTextInputView: View {
 
             SnowballTextInput($textInput, leftSystemIcon: "clipboard")
 
-            SnowballTextInput($textInput, emptyStateText: "Empty state text")
+            SnowballTextInput($textInput, placeholder: "placeholder")
         }
     }
 }

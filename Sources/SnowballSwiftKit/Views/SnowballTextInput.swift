@@ -13,7 +13,7 @@ public struct SnowballTextInput: View {
     var leftSystemIcon: String?
     var rightIcon: String?
     var rightSystemIcon: String?
-    var emptyStateText: String
+    var placeholder: String
     var title: String?
     var subtitle: String?
 
@@ -22,7 +22,7 @@ public struct SnowballTextInput: View {
                 leftSystemIcon: String? = nil,
                 rightIcon: String? = nil,
                 rightSystemIcon: String? = nil,
-                emptyStateText: String = "Text",
+                placeholder: String = "Text",
                 title: String? = nil,
                 subtitle: String? = nil) {
         self._text = text
@@ -30,7 +30,7 @@ public struct SnowballTextInput: View {
         self.leftSystemIcon = leftSystemIcon
         self.rightIcon = rightIcon
         self.rightSystemIcon = rightSystemIcon
-        self.emptyStateText = emptyStateText
+        self.placeholder = placeholder
         self.title = title
         self.subtitle = subtitle
     }
@@ -50,7 +50,7 @@ public struct SnowballTextInput: View {
                     Image(systemName: leftSystemIcon)
                 }
 
-                TextField(emptyStateText, text: $text)
+                TextField(placeholder, text: $text)
 
                 if let rightIcon = rightIcon {
                     Image(rightIcon)
@@ -63,5 +63,16 @@ public struct SnowballTextInput: View {
             .background(Color(UIColor.secondarySystemBackground))
             .cornerRadius(12)
         }
+    }
+}
+
+struct SnowballTextInput_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            SnowballTextInput(.constant("Text Input"))
+
+            SnowballTextInput(.constant(""), placeholder: "empty")
+        }
+        .padding(.horizontal)
     }
 }

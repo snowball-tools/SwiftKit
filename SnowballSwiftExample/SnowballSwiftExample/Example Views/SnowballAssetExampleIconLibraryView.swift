@@ -12,7 +12,7 @@ struct SnowballAssetExampleIconLibraryView: View {
     private var gridLayout: [GridItem] = [
         GridItem(.adaptive(minimum: 30), alignment: .center)
     ]
-    
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: gridLayout, spacing: 10) {

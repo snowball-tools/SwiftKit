@@ -29,3 +29,10 @@ public struct SnowballAvatarStack: View {
         .padding(10)
     }
 }
+
+struct SnowballAvatarStack_Previews: PreviewProvider {
+    static var previews: some View {
+        SnowballAvatarStack([SnowballAvatarModel(imageURL: "https://upload.wikimedia.org/wikipedia/commons/6/68/Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpg")])
+            .padding()
+    }
+}

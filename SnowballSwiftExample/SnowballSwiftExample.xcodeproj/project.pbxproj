@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		084672EF2A1C2B8B00C7FB93 /* SnowballSwiftExampleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084672EE2A1C2B8B00C7FB93 /* SnowballSwiftExampleText.swift */; };
 		084672F12A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084672F02A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift */; };
+		0852879D2A213A310050D56D /* SnowballSwiftExampleSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0852879C2A213A310050D56D /* SnowballSwiftExampleSearchBarView.swift */; };
 		0877BF942A1C18D500A236AB /* SnowballSwiftExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877BF932A1C18D500A236AB /* SnowballSwiftExampleApp.swift */; };
 		0877BF962A1C18D500A236AB /* SnowballSwiftKitHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877BF952A1C18D500A236AB /* SnowballSwiftKitHomeView.swift */; };
 		0877BF982A1C18D600A236AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0877BF972A1C18D600A236AB /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		084672EE2A1C2B8B00C7FB93 /* SnowballSwiftExampleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleText.swift; sourceTree = "<group>"; };
 		084672F02A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleButtonsView.swift; sourceTree = "<group>"; };
+		0852879C2A213A310050D56D /* SnowballSwiftExampleSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleSearchBarView.swift; sourceTree = "<group>"; };
 		0877BF902A1C18D500A236AB /* SnowballSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowballSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0877BF932A1C18D500A236AB /* SnowballSwiftExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleApp.swift; sourceTree = "<group>"; };
 		0877BF952A1C18D500A236AB /* SnowballSwiftKitHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftKitHomeView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				088D740A2A1CA1C200216FC7 /* SnowballSwiftExampleToastView.swift */,
 				088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */,
 				088D74112A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift */,
+				0852879C2A213A310050D56D /* SnowballSwiftExampleSearchBarView.swift */,
 			);
 			path = "Example Views";
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0877BFB42A1C18D600A236AB /* Build configuration list for PBXNativeTarget "SnowballSwiftExample" */;
 			buildPhases = (
+				0852879B2A2137B60050D56D /* ShellScript */,
 				0877BF8C2A1C18D500A236AB /* Sources */,
 				0877BF8D2A1C18D500A236AB /* Frameworks */,
 				0877BF8E2A1C18D500A236AB /* Resources */,
@@ -308,6 +312,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0852879B2A2137B60050D56D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0877BF8C2A1C18D500A236AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -316,6 +341,7 @@
 				088D74122A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift in Sources */,
 				08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift in Sources */,
 				088D74092A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift in Sources */,
+				0852879D2A213A310050D56D /* SnowballSwiftExampleSearchBarView.swift in Sources */,
 				0877BF962A1C18D500A236AB /* SnowballSwiftKitHomeView.swift in Sources */,
 				084672F12A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift in Sources */,
 				088D74102A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift in Sources */,

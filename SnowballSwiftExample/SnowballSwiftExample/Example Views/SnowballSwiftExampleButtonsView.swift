@@ -33,6 +33,7 @@ struct SnowballSwiftExampleButtonsView: View {
                     SnowballButton(leftSystemIcon: "clipboard") {
                         self.tappedButtonString = "clipboard icon only"
                     }
+                    .buttonStyle(.snowballDefault)
                     SnowballButton(leftSystemIcon: "clipboard") {
                         self.tappedButtonString = "clipboard icon only"
                     }
@@ -51,6 +52,7 @@ struct SnowballSwiftExampleButtonsView: View {
                         SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left* icon and text"
                         }
+                        .buttonStyle(.snowballDefault)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left* icon and text"
                         }
@@ -70,6 +72,7 @@ struct SnowballSwiftExampleButtonsView: View {
                         SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *right* icon and text"
                         }
+                        .buttonStyle(.snowballDefault)
                         SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *right* icon and text"
                         }
@@ -84,10 +87,12 @@ struct SnowballSwiftExampleButtonsView: View {
                         .buttonStyle(.snowballFilled)
                         SnowballButton("clipboard") {
                             self.tappedButtonString = "clipboard text only"
-                        }                        .buttonStyle(.snowballTinted)
+                        }
+                        .buttonStyle(.snowballTinted)
                         SnowballButton("clipboard") {
                             self.tappedButtonString = "clipboard text only"
                         }
+                        .buttonStyle(.snowballDefault)
                         SnowballButton("clipboard") {
                             self.tappedButtonString = "clipboard text only"
                         }
@@ -102,17 +107,19 @@ struct SnowballSwiftExampleButtonsView: View {
                         .buttonStyle(.snowballFilled)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left and right* icon and text"
-                        }                   .buttonStyle(.snowballTinted)
+                        }
+                        .buttonStyle(.snowballTinted)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left and right* icon and text"
                         }
+                        .buttonStyle(.snowballDefault)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left and right* icon and text"
                         }
                         .buttonStyle(.snowballDanger)
                     }
                 }
-                
+
                 Divider()
                 VStack {
                     HStack {
@@ -127,6 +134,7 @@ struct SnowballSwiftExampleButtonsView: View {
                         SnowballButton(leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard icon only"
                         }
+                        .buttonStyle(.snowballDefault(.large))
                         SnowballButton(leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard icon only"
                         }
@@ -145,6 +153,7 @@ struct SnowballSwiftExampleButtonsView: View {
                             SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left* icon and text"
                             }
+                            .buttonStyle(.snowballDefault(.large))
                             SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left* icon and text"
                             }
@@ -164,6 +173,7 @@ struct SnowballSwiftExampleButtonsView: View {
                             SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *right* icon and text"
                             }
+                            .buttonStyle(.snowballDefault(.large))
                             SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *right* icon and text"
                             }
@@ -183,13 +193,14 @@ struct SnowballSwiftExampleButtonsView: View {
                             SnowballButton("clipboard") {
                                 self.tappedButtonString = "clipboard text only"
                             }
+                            .buttonStyle(.snowballDefault(.large))
                             SnowballButton("clipboard") {
                                 self.tappedButtonString = "clipboard text only"
                             }
                             .buttonStyle(.snowballDanger(.large))
                         }
                     }
-                    
+
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
                             SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
@@ -203,6 +214,7 @@ struct SnowballSwiftExampleButtonsView: View {
                             SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left and right* icon and text"
                             }
+                            .buttonStyle(.snowballDefault(.large))
                             SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left and right* icon and text"
                             }

@@ -14,9 +14,18 @@ public enum SnowballButtonSize {
     var edgeInsets: EdgeInsets {
         switch self {
         case .small:
-            return EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12)
+            return EdgeInsets(top: 10, leading: 12, bottom: 10, trailing: 12)
         case .large:
             return EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16)
+        }
+    }
+
+    var font: Font {
+        switch self {
+        case .small:
+            return .footnote.weight(.bold)
+        case .large:
+            return .subheadline.weight(.bold)
         }
     }
 }
@@ -28,6 +37,7 @@ public struct SnowballButtonStyle: ButtonStyle {
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .font(buttonSize.font)
             .padding(buttonSize.edgeInsets)
             .background(color)
             .foregroundColor(foregroundColor)
@@ -61,5 +71,13 @@ public extension ButtonStyle where Self == SnowballButtonStyle {
                                             buttonSize: .small) }
     static func snowballDanger(_ buttonSize: SnowballButtonSize) -> Self { .init(color: SnowballColor.dangerButton.color,
                                                                                  foregroundColor: SnowballColor.dangerButtonForeground.color,
+                                                                                 buttonSize: buttonSize) }
+
+    // danger
+    static var snowballDefault: Self { .init(color: Color.clear,
+                                            foregroundColor: SnowballColor.tintedButtonForeground.color,
+                                            buttonSize: .small) }
+    static func snowballDefault(_ buttonSize: SnowballButtonSize) -> Self { .init(color: Color.clear,
+                                                                                 foregroundColor: SnowballColor.tintedButtonForeground.color,
                                                                                  buttonSize: buttonSize) }
 }

@@ -29,3 +29,18 @@ public struct SnowballSwitch: View {
         .toggleStyle(.switch)
     }
 }
+
+struct SnowballSwitch_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            SnowballSwitch(isOn: .constant(true))
+
+            SnowballSwitch(isOn: .constant(false))
+
+            SnowballSwitch(isOn: .constant(true), title: "Label")
+
+            SnowballSwitch(isOn: .constant(true), title: "Label", subtitle: "Add some description for the switch here.")
+        }
+        .padding(.horizontal)
+    }
+}

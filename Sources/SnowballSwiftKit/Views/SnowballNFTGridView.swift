@@ -42,7 +42,11 @@ public struct SnowballNFTGridView: View {
                 LazyVGrid(columns: gridLayout, spacing: 10) {
                     ForEach(viewModel.nfts) { nft in
                             VStack(alignment: .leading) {
-                                makeImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!)
+                                VStack {
+                                    Spacer()
+                                    makeImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!)
+                                    Spacer()
+                                }
                                 Text(nft.title)
                                     .font(.caption)
                                     .lineLimit(1)
@@ -62,9 +66,6 @@ public struct SnowballNFTGridView: View {
                     Image(systemName: "arrow.clockwise")
                 }))
                 .listStyle(.plain)
-                .onAppear {
-                    viewModel.fetchNFTs(forAddress: ethAddress, key: alchemyKey)
-                }
             }
             .onAppear {
                 viewModel.fetchNFTs(forAddress: self.ethAddress, key: alchemyKey)
@@ -72,7 +73,6 @@ public struct SnowballNFTGridView: View {
         }
     }
 
-    // This is where the image view is created.
     func makeImage(url: URL) -> some View {
         LazyImage(url: url) { state in
             if let container = state.imageContainer, container.type ==  .gif, let data = container.data {
@@ -82,7 +82,7 @@ public struct SnowballNFTGridView: View {
                     .resizable()
                     .scaledToFit()
             } else {
-                Color.gray.opacity(0.2) // Placeholder
+                Color.gray.opacity(0.2)
             }
         }
         .pipeline(pipeline)

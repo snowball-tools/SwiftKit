@@ -16,7 +16,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.0.0"),
-        .package(url: "https://github.com/realm/SwiftLint.git", from: "0.51.0"),
         .package(url: "https://github.com/kean/Nuke.git", from: "12.1.0"),
         .package(url: "https://github.com/kaishin/Gifu.git", from: "3.4.0")
     ],
@@ -29,8 +28,7 @@ let package = Package(
                 "Nuke",
                 .product(name: "NukeUI", package: "Nuke"),
                 "Gifu"
-            ],
-            plugins: [.plugin(name: "SwiftLintPlugin", package: "SwiftLint")]
+            ]
         ),
         .target(
             name: "SnowballAssetKit",

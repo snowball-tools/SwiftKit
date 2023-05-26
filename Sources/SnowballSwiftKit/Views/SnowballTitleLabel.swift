@@ -36,3 +36,20 @@ public struct SnowballTitleLabel: View {
         }
     }
 }
+
+struct SnowballTitleLabel_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            SnowballTitleLabel(title: "Label")
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+
+            Divider()
+
+            SnowballTitleLabel(title: "Label",
+                               subtitle: "Add some description for the toast here.")
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+        }
+    }
+}

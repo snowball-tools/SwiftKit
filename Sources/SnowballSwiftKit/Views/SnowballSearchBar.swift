@@ -7,15 +7,20 @@
 
 import SwiftUI
 
-struct SnowballSearchBar: UIViewRepresentable {
+public struct SnowballSearchBar: UIViewRepresentable {
     @Binding var text: String
-    var placeholder: String
+    var placeholder: String?
 
-    func makeCoordinator() -> Coordinator {
+    public init(text: Binding<String>, placeholder: String? = nil) {
+        self._text = text
+        self.placeholder = placeholder
+    }
+
+    public func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
-    func makeUIView(context: Context) -> UISearchBar {
+    public func makeUIView(context: Context) -> UISearchBar {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = context.coordinator
         searchBar.placeholder = placeholder
@@ -24,23 +29,35 @@ struct SnowballSearchBar: UIViewRepresentable {
         return searchBar
     }
 
-    func updateUIView(_ uiView: UISearchBar, context: Context) {
+    public func updateUIView(_ uiView: UISearchBar, context: Context) {
         uiView.text = text
     }
 
-    class Coordinator: NSObject, UISearchBarDelegate {
+    public class Coordinator: NSObject, UISearchBarDelegate {
         let control: SnowballSearchBar
 
-        init(_ control: SnowballSearchBar) {
+        public init(_ control: SnowballSearchBar) {
             self.control = control
         }
 
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             control.text = searchText
         }
 
-        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             searchBar.resignFirstResponder()
+        }
+    }
+}
+
+struct SnowballSearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            SnowballSearchBar(text: .constant("hello"), placeholder: "")
+
+            SnowballSearchBar(text: .constant(""), placeholder: "search item")
+
+            SnowballSearchBar(text: .constant(""))
         }
     }
 }
