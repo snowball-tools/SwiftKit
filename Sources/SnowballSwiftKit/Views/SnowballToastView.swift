@@ -40,26 +40,28 @@ public enum SnowballToastType: String {
 public struct SnowballToastView: View {
     var type: SnowballToastType
     var text: String
-    var subTitle: String?
+    var subtitle: String?
 
-    public init(type: SnowballToastType, text: String, subTitle: String? = nil) {
+    public init(type: SnowballToastType,
+                text: String,
+                subTitle: String? = nil) {
         self.type = type
         self.text = text
-        self.subTitle = subTitle
+        self.subtitle = subTitle
     }
 
     public var body: some View {
         HStack {
-            HStack(alignment: (subTitle != nil) ? .top : .center, spacing: 8) {
+            HStack(alignment: (subtitle != nil) ? .top : .center, spacing: 8) {
                 Image(systemName: type.systemName)
                     .font(.subheadline)
                     .foregroundColor(type.backgroundColor)
-                    .offset(y: (subTitle != nil) ? 2 : 0)
+                    .offset(y: (subtitle != nil) ? 2 : 0)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(text)
                         .font(.footnote)
                         .bold()
-                    if let subTitle = subTitle {
+                    if let subTitle = subtitle {
                         Text(subTitle)
                             .font(.caption)
                             .foregroundColor(Color.secondary)
@@ -76,35 +78,5 @@ public struct SnowballToastView: View {
                 .shadow(color: Color(UIColor.separator), radius: 10, x: 3, y: 1)
         )
 
-    }
-}
-
-struct SnowballToastView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            SnowballToastView(type: .error, text: SnowballToastType.error.rawValue)
-                .padding()
-
-            SnowballToastView(type: .neutral, text: SnowballToastType.neutral.rawValue)
-                .padding()
-
-            SnowballToastView(type: .positive, text: SnowballToastType.positive.rawValue)
-                .padding()
-
-            SnowballToastView(type: .warning, text: SnowballToastType.warning.rawValue)
-                .padding()
-
-            SnowballToastView(type: .error, text: SnowballToastType.error.rawValue, subTitle: "Add some description for the toast here.")
-                .padding()
-
-            SnowballToastView(type: .neutral, text: SnowballToastType.neutral.rawValue, subTitle: "Add some description for the toast here.")
-                .padding()
-
-            SnowballToastView(type: .positive, text: SnowballToastType.positive.rawValue, subTitle: "Add some description for the toast here.")
-                .padding()
-
-            SnowballToastView(type: .warning, text: SnowballToastType.warning.rawValue, subTitle: "Add some description for the toast here.")
-                .padding()
-        }
     }
 }

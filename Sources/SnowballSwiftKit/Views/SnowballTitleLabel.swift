@@ -33,10 +33,3 @@ public struct SnowballTitleLabel: View {
         }
     }
 }
-
-struct SnowballTitleLabel_Previews: PreviewProvider {
-    static var previews: some View {
-        SnowballTitleLabel(title: "Label",
-                           subtitle: "Provide additional context or helpful information.")
-    }
-}

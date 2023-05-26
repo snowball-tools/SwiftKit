@@ -54,12 +54,3 @@ public struct SnowballButton: View {
         }
     }
 }
-
-struct SnowballButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SnowballButton("hello") {
-            print("blah test tap")
-        }
-        .buttonStyle(.snowballDanger(.large))
-    }
-}

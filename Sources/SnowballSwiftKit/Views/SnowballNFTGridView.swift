@@ -27,7 +27,7 @@ public struct SnowballNFTGridView: View {
         self.ethAddress = ethAddress
         self.alchemyKey = alchemyKey
     }
-    
+
     private let pipeline = ImagePipeline {
         $0.dataLoader = {
             let config = URLSessionConfiguration.default
@@ -71,7 +71,7 @@ public struct SnowballNFTGridView: View {
             }
         }
     }
-    
+
     // This is where the image view is created.
     func makeImage(url: URL) -> some View {
         LazyImage(url: url) { state in

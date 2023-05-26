@@ -14,7 +14,10 @@ struct SnowballSwiftExampleTextInputView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("SnowballTextInput")
+            SnowballTextInput($textInput, title: "Label", subtitle: "Provide additional context or helpful information.")
+
+            SnowballTextInput($textInput, title: "Label")
+
             SnowballTextInput($textInput)
 
             SnowballTextInput($nonEmptyTextInput)
@@ -24,10 +27,6 @@ struct SnowballSwiftExampleTextInputView: View {
             SnowballTextInput($textInput, leftSystemIcon: "clipboard")
 
             SnowballTextInput($textInput, emptyStateText: "Empty state text")
-            
-            SnowballTextInput($textInput, title: "hello")
-            
-            SnowballTextInput($textInput, title: "Label", subtitle: "Provide additional context or helpful information.")
         }
     }
 }

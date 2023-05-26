@@ -10,7 +10,7 @@ import SnowballSwiftKit
 
 struct SnowballSwiftExampleTitleLabelView: View {
     var body: some View {
-        SnowballTitleLabel(title: "hello", subtitle: "hello world")
+        SnowballTitleLabel(title: "Label", subtitle: "Provide additional context or helpful information.")
     }
 }
 

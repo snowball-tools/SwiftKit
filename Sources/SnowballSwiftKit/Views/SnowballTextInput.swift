@@ -65,18 +65,3 @@ public struct SnowballTextInput: View {
         }
     }
 }
-
-struct SnowballTextInput_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            SnowballTextInput(.constant("hello world"))
-                .padding()
-
-            SnowballTextInput(.constant("hello world"), leftSystemIcon: "clipboard")
-                .padding()
-
-            SnowballTextInput(.constant(""))
-                .padding()
-        }
-    }
-}

@@ -29,12 +29,3 @@ public struct SnowballSwitch: View {
         .toggleStyle(.switch)
     }
 }
-
-struct SnowballSwitch_Previews: PreviewProvider {
-    static var previews: some View {
-        SnowballSwitch(isOn: .constant(true),
-                            title: "Label",
-                            subtitle: "Provide additional context or helpful information.")
-        .padding()
-    }
-}

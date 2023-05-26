@@ -26,7 +26,7 @@ struct SnowballSwiftKitHomeView: View {
                     SnowballSwiftExampleButtonsView()
                         .navigationTitle("Buttons")
                 }
-                
+
                 NavigationLink("Title Label") {
                     SnowballSwiftExampleTitleLabelView()
                         .navigationTitle("Title Label")

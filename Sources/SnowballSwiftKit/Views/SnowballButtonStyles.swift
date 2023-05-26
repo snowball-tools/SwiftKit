@@ -10,7 +10,7 @@ import SnowballAssetKit
 
 public enum SnowballButtonSize {
     case small, large
-    
+
     var edgeInsets: EdgeInsets {
         switch self {
         case .small:
@@ -25,7 +25,7 @@ public struct SnowballButtonStyle: ButtonStyle {
     let color: Color
     let foregroundColor: Color
     let buttonSize: SnowballButtonSize
-    
+
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(buttonSize.edgeInsets)
@@ -54,7 +54,7 @@ public extension ButtonStyle where Self == SnowballButtonStyle {
                                buttonSize: SnowballButtonSize = .small) -> Self { .init(color: color,
                                                                                         foregroundColor: foregroundColor,
                                                                                         buttonSize: buttonSize) }
-    
+
     // danger
     static var snowballDanger: Self { .init(color: SnowballColor.dangerButton.color,
                                             foregroundColor: SnowballColor.dangerButtonForeground.color,
