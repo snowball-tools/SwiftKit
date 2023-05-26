@@ -70,9 +70,9 @@ public struct SnowballNFTListView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             } else {
-                Color.gray.opacity(0.2) // Placeholder
+                Color.gray.opacity(0.2)
             }
         }
-            .pipeline(pipeline)
+        .pipeline(pipeline)
     }
 }

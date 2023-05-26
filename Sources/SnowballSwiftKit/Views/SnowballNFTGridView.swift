@@ -85,6 +85,6 @@ public struct SnowballNFTGridView: View {
                 Color.gray.opacity(0.2) // Placeholder
             }
         }
-            .pipeline(pipeline)
+        .pipeline(pipeline)
     }
 }
