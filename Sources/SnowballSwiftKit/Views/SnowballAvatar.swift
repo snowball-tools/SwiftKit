@@ -8,23 +8,60 @@
 import SwiftUI
 
 public struct SnowballAvatar: View {
-    let image: Image
+    let image: Image?
+    let number: Int?
 
-    public init(image: Image) {
+    public init(_ image: Image? = nil, number: Int? = nil) {
         self.image = image
+        self.number = number
     }
 
     public var body: some View {
-        image
-            .resizable()
-            .scaledToFit()
+        Color(image != nil ? .clear : UIColor.secondarySystemFill)
+            .aspectRatio(1, contentMode: .fit)
+            .background(SnowballAvatarBackgroundView(image, number: number))
+            .overlay(Circle()
+                .stroke(Color.white, lineWidth: 8))
             .clipShape(Circle())
+            .background(Circle().fill(Color.white))
+    }
+}
+
+public struct SnowballAvatarBackgroundView: View {
+    let image: Image?
+    let number: Int?
+
+    public init(_ image: Image? = nil, number: Int? = nil) {
+        self.image = image
+        self.number = number
+    }
+
+    public var body: some View {
+        if let image = image {
+            image
+                .resizable()
+                .scaledToFill()
+        } else if let number = number {
+            Text("+\(number)")
+                .font(.title)
+                .foregroundColor(Color(UIColor.secondaryLabel))
+                .bold()
+                .lineLimit(1)
+                .minimumScaleFactor(0.01)
+        } else {
+            Circle()
+                .fill(Color.white)
+        }
     }
 }
 
 struct SnowballAvatar_Previews: PreviewProvider {
     static var previews: some View {
-        SnowballAvatar(image: Image(systemName: "person.circle"))
-            .padding()
+        VStack {
+            SnowballAvatar(Image(systemName: "person.circle"))
+            SnowballAvatar(number: 67)
+                .frame(height: 200)
+
+        }
     }
 }
