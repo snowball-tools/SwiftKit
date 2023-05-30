@@ -14,7 +14,7 @@ public enum SnowballButtonSize {
     var edgeInsets: EdgeInsets {
         switch self {
         case .small:
-            return EdgeInsets(top: 10, leading: 12, bottom: 10, trailing: 12)
+            return EdgeInsets(top: 9, leading: 12, bottom: 9, trailing: 12)
         case .large:
             return EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16)
         }
