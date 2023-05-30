@@ -40,7 +40,7 @@ public struct SnowballButtonStyle: ButtonStyle {
         configuration.label
             .font(buttonSize.font)
             .padding(buttonSize.edgeInsets)
-            .background(isEnabled ? color : Color(UIColor.systemFill))
+            .background(isEnabled || Color.clear == color ? color : Color(UIColor.systemFill))
             .foregroundColor(isEnabled ? foregroundColor : Color(UIColor.tertiaryLabel))
             .cornerRadius(12)
     }
@@ -75,7 +75,7 @@ public extension ButtonStyle where Self == SnowballButtonStyle {
                                                                                  buttonSize: buttonSize) }
 
     // danger
-    static var snowballDefault: Self { .init(color: Color.clear,
+    static var  : Self { .init(color: Color.clear,
                                             foregroundColor: SnowballColor.tintedButtonForeground.color,
                                             buttonSize: .small) }
     static func snowballDefault(_ buttonSize: SnowballButtonSize) -> Self { .init(color: Color.clear,
