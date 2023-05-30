@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import UIKit
 
 public struct SnowballAvatar: View {
     let image: Image?
     let number: Int?
+
+    public init(_ image: UIImage? = nil, number: Int? = nil) {
+        self.image = image != nil ? Image(uiImage: image!) : nil
+        self.number = number
+    }
+
+    public init(_ number: Int? = nil) {
+        self.image = nil
+        self.number = number
+    }
 
     public init(_ image: Image? = nil, number: Int? = nil) {
         self.image = image
@@ -21,15 +32,20 @@ public struct SnowballAvatar: View {
             .aspectRatio(1, contentMode: .fit)
             .background(SnowballAvatarBackgroundView(image, number: number))
             .overlay(Circle()
-                .stroke(Color.white, lineWidth: 8))
+                .stroke(.background, lineWidth: 8))
             .clipShape(Circle())
-            .background(Circle().fill(Color.white))
+            .background(Circle().fill(.background))
     }
 }
 
 public struct SnowballAvatarBackgroundView: View {
     let image: Image?
     let number: Int?
+
+    public init(_ image: UIImage? = nil, number: Int? = nil) {
+        self.image = image != nil ? Image(uiImage: image!) : nil
+        self.number = number
+    }
 
     public init(_ image: Image? = nil, number: Int? = nil) {
         self.image = image
@@ -43,14 +59,14 @@ public struct SnowballAvatarBackgroundView: View {
                 .scaledToFill()
         } else if let number = number {
             Text("+\(number)")
-                .font(.title)
+                .font(.caption2)
                 .foregroundColor(Color(UIColor.secondaryLabel))
                 .bold()
                 .lineLimit(1)
                 .minimumScaleFactor(0.01)
         } else {
             Circle()
-                .fill(Color.white)
+                .fill(.background)
         }
     }
 }
@@ -58,10 +74,9 @@ public struct SnowballAvatarBackgroundView: View {
 struct SnowballAvatar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SnowballAvatar(Image(systemName: "person.circle"))
-            SnowballAvatar(number: 67)
+            SnowballAvatar(UIImage(systemName: "person.circle"))
+            SnowballAvatar(67)
                 .frame(height: 200)
-
         }
     }
 }
