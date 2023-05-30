@@ -75,7 +75,7 @@ public extension ButtonStyle where Self == SnowballButtonStyle {
                                                                                  buttonSize: buttonSize) }
 
     // danger
-    static var  : Self { .init(color: Color.clear,
+    static var snowballDefault: Self { .init(color: Color.clear,
                                             foregroundColor: SnowballColor.tintedButtonForeground.color,
                                             buttonSize: .small) }
     static func snowballDefault(_ buttonSize: SnowballButtonSize) -> Self { .init(color: Color.clear,
