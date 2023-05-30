@@ -11,6 +11,7 @@ import SnowballAssetKit
 
 struct SnowballSwiftExampleButtonsView: View {
     @State var tappedButtonString: String = ""
+    @State var buttonDisabled: Bool = false
 
     var body: some View {
         VStack(spacing: 15) {
@@ -20,103 +21,147 @@ struct SnowballSwiftExampleButtonsView: View {
 
             Spacer()
 
+            SnowballButton(self.buttonDisabled ? "enable buttons" : "disable buttons") {
+                self.buttonDisabled.toggle()
+            }
+
             VStack {
                 HStack {
                     SnowballButton(leftSystemIcon: "clipboard") {
                         self.tappedButtonString = "clipboard icon only"
+                        self.buttonDisabled = true
                     }
                     .buttonStyle(.snowballFilled)
+                    .disabled(buttonDisabled)
                     SnowballButton(leftSystemIcon: "clipboard") {
                         self.tappedButtonString = "clipboard icon only"
+                        self.buttonDisabled = true
                     }
                     .buttonStyle(.snowballTinted)
+                    .disabled(buttonDisabled)
                     SnowballButton(leftSystemIcon: "clipboard") {
                         self.tappedButtonString = "clipboard icon only"
+                        self.buttonDisabled = true
                     }
                     .buttonStyle(.snowballDefault)
+                    .disabled(buttonDisabled)
                     SnowballButton(leftSystemIcon: "clipboard") {
                         self.tappedButtonString = "clipboard icon only"
+                        self.buttonDisabled = true
                     }
                     .buttonStyle(.snowballDanger)
+                    .disabled(buttonDisabled)
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballFilled)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballTinted)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDefault)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDanger)
+                        .disabled(buttonDisabled)
                     }
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballFilled)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballTinted)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDefault)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDanger)
+                        .disabled(buttonDisabled)
                     }
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         SnowballButton("clipboard") {
                             self.tappedButtonString = "clipboard text only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballFilled)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard") {
                             self.tappedButtonString = "clipboard text only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballTinted)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard") {
                             self.tappedButtonString = "clipboard text only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDefault)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard") {
                             self.tappedButtonString = "clipboard text only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDanger)
+                        .disabled(buttonDisabled)
                     }
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left and right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballFilled)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left and right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballTinted)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left and right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDefault)
+                        .disabled(buttonDisabled)
                         SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard with *left and right* icon and text"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDanger)
+                        .disabled(buttonDisabled)
                     }
                 }
 
@@ -125,79 +170,111 @@ struct SnowballSwiftExampleButtonsView: View {
                     HStack {
                         SnowballButton(leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard icon only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballFilled(buttonSize: .large))
+                        .disabled(buttonDisabled)
                         SnowballButton(leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard icon only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballTinted(.large))
+                        .disabled(buttonDisabled)
                         SnowballButton(leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard icon only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDefault(.large))
+                        .disabled(buttonDisabled)
                         SnowballButton(leftSystemIcon: "clipboard") {
                             self.tappedButtonString = "clipboard icon only"
+                            self.buttonDisabled = true
                         }
                         .buttonStyle(.snowballDanger(.large))
+                        .disabled(buttonDisabled)
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
                             SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballFilled(buttonSize: .large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballTinted(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDefault(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", leftSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDanger(.large))
+                            .disabled(buttonDisabled)
                         }
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
                             SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballFilled(buttonSize: .large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballTinted(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDefault(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDanger(.large))
+                            .disabled(buttonDisabled)
                         }
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
                             SnowballButton("clipboard") {
                                 self.tappedButtonString = "clipboard text only"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballFilled(buttonSize: .large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard") {
                                 self.tappedButtonString = "clipboard text only"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballTinted(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard") {
                                 self.tappedButtonString = "clipboard text only"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDefault(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard") {
                                 self.tappedButtonString = "clipboard text only"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDanger(.large))
+                            .disabled(buttonDisabled)
                         }
                     }
 
@@ -205,20 +282,28 @@ struct SnowballSwiftExampleButtonsView: View {
                         HStack(spacing: 10) {
                             SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left and right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballFilled(buttonSize: .large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left and right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballTinted(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left and right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDefault(.large))
+                            .disabled(buttonDisabled)
                             SnowballButton("clipboard", leftSystemIcon: "clipboard", rightSystemIcon: "clipboard") {
                                 self.tappedButtonString = "clipboard with *left and right* icon and text"
+                                self.buttonDisabled = true
                             }
                             .buttonStyle(.snowballDanger(.large))
+                            .disabled(buttonDisabled)
                         }
                     }
                 }

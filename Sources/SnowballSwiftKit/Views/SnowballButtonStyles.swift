@@ -31,6 +31,7 @@ public enum SnowballButtonSize {
 }
 
 public struct SnowballButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
     let color: Color
     let foregroundColor: Color
     let buttonSize: SnowballButtonSize
@@ -39,8 +40,8 @@ public struct SnowballButtonStyle: ButtonStyle {
         configuration.label
             .font(buttonSize.font)
             .padding(buttonSize.edgeInsets)
-            .background(color)
-            .foregroundColor(foregroundColor)
+            .background(isEnabled ? color : Color(UIColor.systemFill))
+            .foregroundColor(isEnabled ? foregroundColor : Color(UIColor.tertiaryLabel))
             .cornerRadius(12)
     }
 }
