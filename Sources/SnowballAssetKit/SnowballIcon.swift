@@ -20,9 +20,11 @@ public enum SnowballIcon: String, CaseIterable, Identifiable {
     // external wallets
     case metamask, phantom, walletConnect, brave, ledger, coinbaseWallet, trezor, trust, argent
 
+    case snowball
+
     public var type: SnowballIconType {
         switch self {
-        case .metamask, .phantom, .walletConnect, .brave, .ledger, .coinbaseWallet, .trezor, .trust, .argent:
+        case .metamask, .phantom, .walletConnect, .brave, .ledger, .coinbaseWallet, .trezor, .trust, .argent, .snowball:
             return .wallet
         default:
             return .asset
@@ -30,7 +32,11 @@ public enum SnowballIcon: String, CaseIterable, Identifiable {
     }
 
     public var assetName: String {
-        self.type == .wallet ? self.rawValue + "_circle" : self.rawValue.uppercased()
+        switch self.type {
+        case .asset:
+            return self.rawValue.uppercased()
+        case .wallet:
+            return self.rawValue + "_circle"
+        }
     }
-
 }

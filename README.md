@@ -33,11 +33,20 @@ Packages:
 V0 (rough rough start) are ready! 
 
 - `SnowballAvatar`
+- `SnowballAvatarRemoteStack`
 - `SnowballAvatarStack`
+<br><img src="Screenshots/Stack.png" alt="Stack" width="400">
+
 - `SnowballButton`
+    - for convenience, left + right system icons or images and text. 
+    - `SnowballButtonStyles`: `snowballDefault`, `snowballTinted`, `snowballFilled`, `snowballDanger`
+        - set via `.buttonStyle(.snowballFilled)` or 
+        - also styles Apple's `Button`
 - `SnowballNFTGridView`
 - `SnowballNFTListView`
 - `SnowballSearchBar`
+<br><img src="Screenshots/SearchBar.png" alt="Search Bar" width="400">
+
 - `SnowballSwitchLabel`
 <br><img src="Screenshots/Switch.png" alt="Switch" width="400">
 
@@ -55,9 +64,9 @@ V0 (rough rough start) are ready!
 ## `SnowballAssetKit` Documentation
 <br><img src="Screenshots/Icons.png" alt="Icons" width="600">
 
-Asset library of common token symbols and external wallets
+Asset library of common token symbols and wallets
 - token symbols: `sol`, `btc`, `eth`, `avax`, `bnb`, `matic`, `atom`, `dot`, `ada`, `algo`, `ftt`, `msol`, `ltc`, `xrp`, `yifi`, `eos`, `ar`, `sec`, `fil`, `trx`, `xtz`, `sushi`, `ape`, `near`, `doge`, `srm`, `gmt`, `crv`, `ftm`, `jewel`, `usdc`
-- external wallets: `metamask`, `phantom`, `walletConnect`, `brave`, `ledger`, `coinbaseWallet`, `trezor`, `trust`, `argent`
+- wallets: `snowball`, `metamask`, `phantom`, `walletConnect`, `brave`, `ledger`, `coinbaseWallet`, `trezor`, `trust`, `argent`
 
 use symbols via 
 
@@ -66,11 +75,11 @@ use symbols via
 SnowballImage(.sol) 
 ```
 - tokens: `SnowballImage("SOL")`
-- external wallets: SnowballImage("metamask_circle")`, `SnowballImage("metamask_icon")`, or `SnowballImage("metamask_square")`
+- wallets: `SnowballImage("snowball_circle")`, `SnowballImage("snowball_icon")`, or `SnowballImage("snowball_square")`
 
 ### UIKit
 ```
 SnowballUIImage(.sol)
 ```
 - tokens: `SnowballUIImage("SOL")`
-- external wallets: SnowballUIImage("metamask_circle")`, `SnowballUIImage("metamask_icon")`, or `SnowballUIImage("metamask_square")`
+- wallets: `SnowballUIImage("snowball_circle")`, `SnowballUIImage("snowball_icon")`, or `SnowballUIImage("snowball_square")`

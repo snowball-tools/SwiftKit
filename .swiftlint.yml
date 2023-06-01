@@ -11,7 +11,7 @@ disabled_rules:
   - force_cast
 
 excluded:
-  - SnowballSwiftKit/SnowballSwiftExample/SnowballSwiftExample/.build
+  - .build
 
 custom_rules:
   restrict_non_ascii:

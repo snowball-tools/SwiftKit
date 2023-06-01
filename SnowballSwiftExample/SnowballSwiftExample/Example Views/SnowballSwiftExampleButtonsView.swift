@@ -79,6 +79,7 @@ struct SnowballSwiftExampleButtonsView: View {
                         .buttonStyle(.snowballDanger)
                         .disabled(buttonDisabled)
                     }
+                    .padding(.horizontal, 5)
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
@@ -107,6 +108,7 @@ struct SnowballSwiftExampleButtonsView: View {
                         .buttonStyle(.snowballDanger)
                         .disabled(buttonDisabled)
                     }
+                    .padding(.horizontal, 5)
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
@@ -135,6 +137,7 @@ struct SnowballSwiftExampleButtonsView: View {
                         .buttonStyle(.snowballDanger)
                         .disabled(buttonDisabled)
                     }
+                    .padding(.horizontal, 5)
                 }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
@@ -163,6 +166,7 @@ struct SnowballSwiftExampleButtonsView: View {
                         .buttonStyle(.snowballDanger)
                         .disabled(buttonDisabled)
                     }
+                    .padding(.horizontal, 5)
                 }
 
                 Divider()
@@ -220,6 +224,7 @@ struct SnowballSwiftExampleButtonsView: View {
                             .buttonStyle(.snowballDanger(.large))
                             .disabled(buttonDisabled)
                         }
+                        .padding(.horizontal, 5)
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
@@ -248,6 +253,7 @@ struct SnowballSwiftExampleButtonsView: View {
                             .buttonStyle(.snowballDanger(.large))
                             .disabled(buttonDisabled)
                         }
+                        .padding(.horizontal, 5)
                     }
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
@@ -276,6 +282,7 @@ struct SnowballSwiftExampleButtonsView: View {
                             .buttonStyle(.snowballDanger(.large))
                             .disabled(buttonDisabled)
                         }
+                        .padding(.horizontal, 5)
                     }
 
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -305,6 +312,7 @@ struct SnowballSwiftExampleButtonsView: View {
                             .buttonStyle(.snowballDanger(.large))
                             .disabled(buttonDisabled)
                         }
+                        .padding(.horizontal, 5)
                     }
                 }
             }
