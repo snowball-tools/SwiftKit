@@ -15,9 +15,19 @@ struct SnowballAssetExampleIconLibraryView: View {
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
+            Text("Images")
+                .font(.headline)
             LazyVGrid(columns: gridLayout, spacing: 10) {
                 ForEach(SnowballIcon.allCases) { type in
                     SnowballImage(type)
+                }
+            }
+            Divider()
+            Text("SF Symbols")
+                .font(.headline)
+            LazyVGrid(columns: gridLayout, spacing: 10) {
+                ForEach(SnowballIcon.allCases) { type in
+                    SnowballImage(type.sfSymbol)
                 }
             }
             Divider()
@@ -27,6 +37,8 @@ struct SnowballAssetExampleIconLibraryView: View {
                         SnowballImage(type)
                         Divider().frame(height: 20)
                         Text("SnowballImage(.\(type.rawValue))")
+                        Spacer()
+                        SnowballImage(type.sfSymbol)
                     }
                 }
             }
