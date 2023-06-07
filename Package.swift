@@ -15,19 +15,15 @@ let package = Package(
             targets: ["SnowballAssetKit"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.0.0"),
         .package(url: "https://github.com/kean/Nuke.git", from: "12.1.0"),
-        .package(url: "https://github.com/kaishin/Gifu.git", from: "3.4.0")
     ],
     targets: [
         .target(
             name: "SnowballSwiftKit",
             dependencies: [
-                "Alamofire",
                 "SnowballAssetKit",
                 "Nuke",
                 .product(name: "NukeUI", package: "Nuke"),
-                "Gifu"
             ]
         ),
         .target(

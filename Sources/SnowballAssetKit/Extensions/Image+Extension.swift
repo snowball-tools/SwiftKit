@@ -20,7 +20,7 @@ public extension Image {
     init(_ type: SnowballIcon) {
         self.init(uiImage: UIImage(type))
     }
-    
+
     init(_ type: SnowballIcon, assetType: SnowballIconAssetType = .image) {
         self.init(uiImage: UIImage(type, assetType: assetType))
     }

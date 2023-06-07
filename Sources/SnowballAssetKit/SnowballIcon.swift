@@ -39,11 +39,11 @@ public enum SnowballIcon: String, CaseIterable, Identifiable {
             return self.rawValue + "_circle"
         }
     }
-    
+
     public var sfSymbol: String {
         self.assetName + "_sf_symbol"
     }
-    
+
     public func string(for assetType: SnowballIconAssetType) -> String {
         switch assetType {
         case .image:

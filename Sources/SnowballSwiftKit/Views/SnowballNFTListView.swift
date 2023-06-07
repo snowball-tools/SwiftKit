@@ -11,16 +11,18 @@ import NukeUI
 
 // todo: snowball settings
 public struct SnowballNFTListView: View {
-    @StateObject private var viewModel = AlchemyNFTViewModel()
+    @StateObject private var viewModel = AlchemyViewModel<AlchemyNFTListModel>()
     @State private var listId = UUID()
     let ethAddress: String
+    let chain: SnowballChain
 
     // todo: snowball settings with api key
     var alchemyKey: String
 
-    public init(ethAddress: String, alchemyKey: String) {
+    public init(ethAddress: String, alchemyKey: String, chain: SnowballChain = .eth_mainnet) {
         self.ethAddress = ethAddress
         self.alchemyKey = alchemyKey
+        self.chain = chain
     }
 
     private let pipeline = ImagePipeline {
@@ -32,7 +34,7 @@ public struct SnowballNFTListView: View {
     }
 
     public var body: some View {
-        List(viewModel.nfts) { nft in
+        List(viewModel.models?.nfts ?? []) { nft in
             let view = VStack {
                 VStack {
                     makeImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!)
@@ -56,15 +58,13 @@ public struct SnowballNFTListView: View {
         }))
         .listStyle(.plain)
         .onAppear {
-            viewModel.fetchNFTs(forAddress: ethAddress, key: alchemyKey)
+            viewModel.fetch(type: .nfts(key: alchemyKey, address: ethAddress), chain: self.chain)
         }
     }
 
     func makeImage(url: URL) -> some View {
         LazyImage(url: url) { state in
-            if let container = state.imageContainer, container.type ==  .gif, let data = container.data {
-                GIFImage(data: data)
-            } else if let image = state.image {
+            if let image = state.image {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)

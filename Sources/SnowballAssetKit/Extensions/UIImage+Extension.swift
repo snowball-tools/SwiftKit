@@ -19,7 +19,7 @@ public extension UIImage {
     convenience init(_ type: SnowballIcon) {
         self.init(named: type.assetName, in: Bundle.module, compatibleWith: nil)!
     }
-    
+
     convenience init(_ type: SnowballIcon, assetType: SnowballIconAssetType = .image) {
         self.init(named: type.string(for: assetType), in: Bundle.module, compatibleWith: nil)!
     }

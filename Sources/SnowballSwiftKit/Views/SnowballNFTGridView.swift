@@ -12,20 +12,20 @@ import NukeUI
 // todo: snowball settings
 public struct SnowballNFTGridView: View {
     @State private var listId = UUID()
-    @StateObject private var viewModel = AlchemyNFTViewModel()
+    @StateObject private var viewModel = AlchemyViewModel<AlchemyNFTListModel>()
     var ethAddress: String
-
-    // todo: snowball settings with api key
-    var alchemyKey: String
+    var chain: SnowballChain
+    var alchemyKey: String  // todo: snowball settings
 
     private var gridLayout: [GridItem] = [
         GridItem(.flexible(), spacing: 10),
         GridItem(.flexible(), spacing: 10)
     ]
 
-    public init(ethAddress: String, alchemyKey: String) {
+    public init(ethAddress: String, alchemyKey: String, chain: SnowballChain = .eth_mainnet) {
         self.ethAddress = ethAddress
         self.alchemyKey = alchemyKey
+        self.chain = chain
     }
 
     private let pipeline = ImagePipeline {
@@ -40,7 +40,8 @@ public struct SnowballNFTGridView: View {
         ScrollView {
             VStack {
                 LazyVGrid(columns: gridLayout, spacing: 10) {
-                    ForEach(viewModel.nfts) { nft in
+                    if let nfts = viewModel.models?.nfts {
+                        ForEach(nfts) { nft in
                             VStack(alignment: .leading) {
                                 VStack {
                                     Spacer()
@@ -57,6 +58,9 @@ public struct SnowballNFTGridView: View {
                             .cornerRadius(10)
                             .shadow(radius: 3)
                         }
+                    } else {
+                        EmptyView()
+                    }
                 }
                 .padding(10)
                 .navigationBarItems(trailing: Button(action: {
@@ -68,16 +72,14 @@ public struct SnowballNFTGridView: View {
                 .listStyle(.plain)
             }
             .onAppear {
-                viewModel.fetchNFTs(forAddress: self.ethAddress, key: alchemyKey)
+                viewModel.fetch(type: .nfts(key: alchemyKey, address: ethAddress), chain: .eth_mainnet)
             }
         }
     }
 
     func makeImage(url: URL) -> some View {
         LazyImage(url: url) { state in
-            if let container = state.imageContainer, container.type ==  .gif, let data = container.data {
-                GIFImage(data: data)
-            } else if let image = state.image {
+            if let image = state.image {
                 image
                     .resizable()
                     .scaledToFit()

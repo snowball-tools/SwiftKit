@@ -10,8 +10,6 @@ import SnowballSwiftKit
 import SnowballAssetKit
 
 struct SnowballSwiftKitHomeView: View {
-    // todo: Snowball Settings for app wide settings
-    let alchemyKey: String = Bundle.main.infoDictionary?["ALCHEMY_NFT_KEY"] as? String ?? ""
     @State var switchStateIsOn: Bool = false
 
     var body: some View {
@@ -36,16 +34,14 @@ struct SnowballSwiftKitHomeView: View {
                     }
 
                     NavigationLink("NFT Grid View") {
-                        SnowballSwiftExampleNFTView(alchemyKey: alchemyKey)
+                        SnowballSwiftExampleNFTView()
                             .navigationTitle("NFT Grid")
                     }
-                    .disabled(alchemyKey == "" || alchemyKey == "PasteNFTKeyHere")
 
                     NavigationLink("NFT List View") {
-                        SnowballSwiftExampleNFTView(alchemyKey: alchemyKey, type: .list)
+                        SnowballSwiftExampleNFTView(type: .list)
                             .navigationTitle("NFT List")
                     }
-                    .disabled(alchemyKey == "" || alchemyKey == "PasteNFTKeyHere")
 
                     NavigationLink("Avatar View (needs a lot of work)") {
                         SnowballSwiftExampleAvatarStackView()

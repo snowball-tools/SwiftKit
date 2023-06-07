@@ -2,7 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ALCHEMY_NFT_KEY</key>
-	<string>$(ALCHEMY_NFT_KEY)</string>
+	<key>ALCHEMY_ETH_SEPOLIA_KEY</key>
+	<string>$(ALCHEMY_ETH_SEPOLIA_KEY)</string>
+	<key>ALCHEMY_ETH_GOERLI_KEY</key>
+	<string>$(ALCHEMY_ETH_GOERLI_KEY)</string>
+	<key>ALCHEMY_ETH_MAINNET_KEY</key>
+	<string>$(ALCHEMY_ETH_MAINNET_KEY)</string>
 </dict>
 </plist>
