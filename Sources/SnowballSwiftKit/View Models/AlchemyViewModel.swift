@@ -11,7 +11,7 @@ public class AlchemyViewModel<T: Codable>: ObservableObject {
     let apiManager = APIManagerImpl()
     @Published var models: T?
 
-    func fetch(type endpoint: AlchemyNFTEndpoints,
+    func fetch(type endpoint: AlchemyEndpoints,
                chain: SnowballChain = .eth_mainnet) {
         let networkRequest = apiManager.networkRequest(baseURL: chain.alchemyBaseURL,
                                                        endpoint: endpoint)
@@ -42,7 +42,7 @@ extension SnowballChain {
     }
 }
 
-enum AlchemyNFTEndpoints: Endpoint {
+enum AlchemyEndpoints: Endpoint {
     case nfts(key: String, address: String)
 
     var path: String {

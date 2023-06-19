@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  SnowballChain.swift
+//  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 6/7/23.
 //

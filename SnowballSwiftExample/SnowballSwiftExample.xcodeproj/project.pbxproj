@@ -18,6 +18,7 @@
 		0877BFAF2A1C18D600A236AB /* SnowballSwiftExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877BFAE2A1C18D600A236AB /* SnowballSwiftExampleUITests.swift */; };
 		0877BFB12A1C18D600A236AB /* SnowballSwiftExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877BFB02A1C18D600A236AB /* SnowballSwiftExampleUITestsLaunchTests.swift */; };
 		0877BFC02A1C195F00A236AB /* SnowballSwiftKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0877BFBF2A1C195F00A236AB /* SnowballSwiftKit */; };
+		087F60F32A311A0100672071 /* SnowballSeedPhraseImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F60F22A311A0100672071 /* SnowballSeedPhraseImportView.swift */; };
 		08801CBD2A1C438500C98ADF /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 08801CBC2A1C438500C98ADF /* Config.xcconfig */; };
 		08801CBF2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */; };
 		08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */; };
@@ -60,6 +61,7 @@
 		0877BFAE2A1C18D600A236AB /* SnowballSwiftExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleUITests.swift; sourceTree = "<group>"; };
 		0877BFB02A1C18D600A236AB /* SnowballSwiftExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0877BFBD2A1C192600A236AB /* SnowballSwiftKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SnowballSwiftKit; path = ..; sourceTree = "<group>"; };
+		087F60F22A311A0100672071 /* SnowballSeedPhraseImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSeedPhraseImportView.swift; sourceTree = "<group>"; };
 		08801CBC2A1C438500C98ADF /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = SOURCE_ROOT; };
 		08801CBE2A1C484C00C98ADF /* SnowballSwiftExampleNFTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleNFTView.swift; sourceTree = "<group>"; };
 		08801CC02A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowballSwiftExampleAvatarStackView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				088D740F2A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift */,
 				088D74112A20080900216FC7 /* SnowballSwiftExampleTitleLabelView.swift */,
 				0852879C2A213A310050D56D /* SnowballSwiftExampleSearchBarView.swift */,
+				087F60F22A311A0100672071 /* SnowballSeedPhraseImportView.swift */,
 			);
 			path = "Example Views";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				08801CC12A1C4FF500C98ADF /* SnowballSwiftExampleAvatarStackView.swift in Sources */,
 				088D74092A1C8E7B00216FC7 /* SnowballSwiftExampleTextInputView.swift in Sources */,
 				0852879D2A213A310050D56D /* SnowballSwiftExampleSearchBarView.swift in Sources */,
+				087F60F32A311A0100672071 /* SnowballSeedPhraseImportView.swift in Sources */,
 				0877BF962A1C18D500A236AB /* SnowballSwiftKitHomeView.swift in Sources */,
 				084672F12A1C2FFF00C7FB93 /* SnowballSwiftExampleButtonsView.swift in Sources */,
 				088D74102A1E80BE00216FC7 /* SnowballAssetExampleIconLibraryView.swift in Sources */,
