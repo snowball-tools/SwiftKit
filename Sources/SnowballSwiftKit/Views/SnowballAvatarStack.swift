@@ -21,10 +21,10 @@ public struct SnowballAvatarStack: View {
     public var body: some View {
         HStack(spacing: -10) {
             ForEach(Array(zip(avatars.indices, avatars)), id: \.0) { _, avatar in
-               SnowballAvatar(avatar)
+               AvatarView(avatar)
             }
             if self.number > 0 {
-                SnowballAvatar(self.number)
+                AvatarView(self.number)
             }
         }
     }
