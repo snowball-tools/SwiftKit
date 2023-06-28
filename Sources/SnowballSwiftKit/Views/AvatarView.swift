@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-public struct SnowballAvatar: View {
+public struct AvatarView: View {
     let image: Image?
     let number: Int?
 
@@ -74,8 +74,8 @@ public struct SnowballAvatarBackgroundView: View {
 struct SnowballAvatar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SnowballAvatar(UIImage(systemName: "person.circle"))
-            SnowballAvatar(67)
+            AvatarView(UIImage(systemName: "person.circle"))
+            AvatarView(67)
                 .frame(height: 200)
         }
     }

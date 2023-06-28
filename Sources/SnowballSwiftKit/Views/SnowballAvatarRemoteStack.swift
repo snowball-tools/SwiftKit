@@ -21,13 +21,13 @@ public struct SnowballAvatarRemoteStack: View {
         HStack(spacing: -20) {
             ForEach(Array(zip(viewModel.avatars.indices, viewModel.avatars)), id: \.0) { index, _ in
                 if viewModel.images.count > 0 {
-                    SnowballAvatar(viewModel.images[index])
+                    AvatarView(viewModel.images[index])
                 } else {
-                    SnowballAvatar()
+                    AvatarView()
                 }
             }
             if self.number > 0 {
-                SnowballAvatar(self.number)
+                AvatarView(self.number)
             }
         }
         .onAppear {
