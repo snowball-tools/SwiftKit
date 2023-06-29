@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public enum SnowballToastType: String {
+public enum ToastStyle: String {
     case error, warning, neutral, positive
 
     var systemName: String {
@@ -37,24 +37,24 @@ public enum SnowballToastType: String {
     }
 }
 
-public struct SnowballToastView: View {
-    var type: SnowballToastType
+public struct ToastView: View {
+    var style: ToastStyle
     var title: String
     var subtitle: String?
 
-    public init(type: SnowballToastType,
+    public init(type: ToastStyle,
                 title: String,
                 subtitle: String? = nil) {
-        self.type = type
+        self.style = type
         self.title = title
         self.subtitle = subtitle
     }
 
     public var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Image(systemName: type.systemName)
+            Image(systemName: style.systemName)
                 .font(.subheadline)
-                .foregroundColor(type.backgroundColor)
+                .foregroundColor(style.backgroundColor)
                 .frame(height: 24)
 
             SnowballTitleLabel(title: title, subtitle: subtitle, spacing: 4, font: .subheadline)
