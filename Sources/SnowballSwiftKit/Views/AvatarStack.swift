@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import SnowballAssetKit
 
-public struct SnowballAvatarStack: View {
+public struct AvatarStack: View {
     var avatars: [Image]
     var number: Int
 
@@ -32,7 +32,7 @@ public struct SnowballAvatarStack: View {
 
 struct SnowballAvatarStack_Previews: PreviewProvider {
     static var previews: some View {
-        SnowballAvatarStack([SnowballImage(.sol),
+        AvatarStack([SnowballImage(.sol),
                              SnowballImage(.metamask)])
             .frame(height: 32)
     }
