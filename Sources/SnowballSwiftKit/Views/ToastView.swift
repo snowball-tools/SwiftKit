@@ -1,5 +1,5 @@
 //
-//  SnowballToastView.swift
+//  ToastView.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/23/23.
@@ -57,7 +57,7 @@ public struct ToastView: View {
                 .foregroundColor(style.backgroundColor)
                 .frame(height: 24)
 
-            SnowballTitleLabel(title: title, subtitle: subtitle, spacing: 4, font: .subheadline)
+            TitleLabel(title: title, subtitle: subtitle, spacing: 4, font: .subheadline)
                 .alignmentGuide(.firstTextBaseline) { d in d[.firstTextBaseline] + 2 }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)

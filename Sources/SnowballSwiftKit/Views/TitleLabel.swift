@@ -1,5 +1,5 @@
 //
-//  SnowballTitleLabel.swift
+//  TitleLabel.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/25/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SnowballTitleLabel: View {
+public struct TitleLabel: View {
     let title: String
     let subtitle: String?
     let spacing: CGFloat
@@ -37,16 +37,16 @@ public struct SnowballTitleLabel: View {
     }
 }
 
-struct SnowballTitleLabel_Previews: PreviewProvider {
+struct TitleLabel_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SnowballTitleLabel(title: "Label")
+            TitleLabel(title: "Label")
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .topLeading)
 
             Divider()
 
-            SnowballTitleLabel(title: "Label",
+            TitleLabel(title: "Label",
                                subtitle: "Add some description for the toast here.")
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, alignment: .topLeading)

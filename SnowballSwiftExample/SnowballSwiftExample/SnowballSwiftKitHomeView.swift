@@ -49,7 +49,7 @@ struct SnowballSwiftKitHomeView: View {
                             .padding(.horizontal)
                     }
 
-                    SnowballSwitch(isOn: $switchStateIsOn, title: "Switch Text Label", subtitle: "Provide additional context or helpful information.")
+                    Switch(isOn: $switchStateIsOn, title: "Switch Text Label", subtitle: "Provide additional context or helpful information.")
 
                     NavigationLink("Input View") {
                         SnowballSwiftExampleTextInputView()

@@ -1,5 +1,5 @@
 //
-//  SnowballSearchBar.swift
+//  SearchBar.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/1/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SnowballSearchBar: UIViewRepresentable {
+public struct SearchBar: UIViewRepresentable {
     @Binding var text: String
     var placeholder: String?
 
@@ -34,9 +34,9 @@ public struct SnowballSearchBar: UIViewRepresentable {
     }
 
     public class Coordinator: NSObject, UISearchBarDelegate {
-        let control: SnowballSearchBar
+        let control: SearchBar
 
-        public init(_ control: SnowballSearchBar) {
+        public init(_ control: SearchBar) {
             self.control = control
         }
 
@@ -50,14 +50,14 @@ public struct SnowballSearchBar: UIViewRepresentable {
     }
 }
 
-struct SnowballSearchBar_Previews: PreviewProvider {
+struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SnowballSearchBar(text: .constant("hello"), placeholder: "")
+            SearchBar(text: .constant("hello"), placeholder: "")
 
-            SnowballSearchBar(text: .constant(""), placeholder: "search item")
+            SearchBar(text: .constant(""), placeholder: "search item")
 
-            SnowballSearchBar(text: .constant(""))
+            SearchBar(text: .constant(""))
         }
     }
 }

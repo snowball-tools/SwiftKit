@@ -12,7 +12,7 @@ public class AlchemyViewModel<T: Codable>: ObservableObject {
     @Published var models: T?
 
     func fetch(type endpoint: AlchemyEndpoints,
-               chain: SnowballChain = .eth_mainnet) {
+               chain: Chain = .eth_mainnet) {
         let networkRequest = apiManager.networkRequest(baseURL: chain.alchemyBaseURL,
                                                        endpoint: endpoint)
 
@@ -29,7 +29,7 @@ public class AlchemyViewModel<T: Codable>: ObservableObject {
     }
 }
 
-extension SnowballChain {
+extension Chain {
     var alchemyBaseURL: String {
         switch self {
         case .eth_mainnet:

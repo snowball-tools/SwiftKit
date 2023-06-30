@@ -1,5 +1,5 @@
 //
-//  SnowballTextInput.swift
+//  TextInput.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/23/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SnowballTextInput: View {
+public struct TextInput: View {
     @Binding var text: String
     var leftIcon: String?
     var leftSystemIcon: String?
@@ -38,7 +38,7 @@ public struct SnowballTextInput: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             if let labelText = title {
-                SnowballTitleLabel(title: labelText, subtitle: subtitle)
+                TitleLabel(title: labelText, subtitle: subtitle)
                     .padding(EdgeInsets( top: 0, leading: 4, bottom: 0, trailing: 0))
             }
 
@@ -66,12 +66,12 @@ public struct SnowballTextInput: View {
     }
 }
 
-struct SnowballTextInput_Previews: PreviewProvider {
+struct TextInput_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SnowballTextInput(.constant("Text Input"))
+            TextInput(.constant("Text Input"))
 
-            SnowballTextInput(.constant(""), placeholder: "empty")
+            TextInput(.constant(""), placeholder: "empty")
         }
         .padding(.horizontal)
     }

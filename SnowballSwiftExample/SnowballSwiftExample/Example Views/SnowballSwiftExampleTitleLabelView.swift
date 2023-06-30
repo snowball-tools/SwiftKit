@@ -11,9 +11,9 @@ import SnowballSwiftKit
 struct SnowballSwiftExampleTitleLabelView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            SnowballTitleLabel(title: "Label", subtitle: "Provide additional context or helpful information.")
+            TitleLabel(title: "Label", subtitle: "Provide additional context or helpful information.")
             Divider()
-            SnowballTitleLabel(title: "Label")
+            TitleLabel(title: "Label")
         }
     }
 }

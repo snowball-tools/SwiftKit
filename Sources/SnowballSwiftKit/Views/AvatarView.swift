@@ -30,7 +30,7 @@ public struct AvatarView: View {
     public var body: some View {
         Color(image != nil ? .clear : UIColor.secondarySystemFill)
             .aspectRatio(1, contentMode: .fit)
-            .background(SnowballAvatarBackgroundView(image, number: number))
+            .background(AvatarBackgroundView(image, number: number))
             .overlay(Circle()
                 .stroke(.background, lineWidth: 8))
             .clipShape(Circle())
@@ -38,7 +38,7 @@ public struct AvatarView: View {
     }
 }
 
-public struct SnowballAvatarBackgroundView: View {
+public struct AvatarBackgroundView: View {
     let image: Image?
     let number: Int?
 
@@ -71,7 +71,7 @@ public struct SnowballAvatarBackgroundView: View {
     }
 }
 
-struct SnowballAvatar_Previews: PreviewProvider {
+struct Avatar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             AvatarView(UIImage(systemName: "person.circle"))

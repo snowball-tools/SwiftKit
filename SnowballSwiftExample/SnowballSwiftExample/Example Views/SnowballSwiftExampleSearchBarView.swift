@@ -14,13 +14,13 @@ struct SnowballSwiftExampleSearchBarView: View {
 
     var body: some View {
         VStack {
-            SnowballSearchBar(text: $searchBarTextNonEmpty)
+            SearchBar(text: $searchBarTextNonEmpty)
 
-            SnowballSearchBar(text: $searchBarText)
+            SearchBar(text: $searchBarText)
 
-            SnowballSearchBar(text: $searchBarText, placeholder: "")
+            SearchBar(text: $searchBarText, placeholder: "")
 
-            SnowballSearchBar(text: $searchBarText, placeholder: "search item")
+            SearchBar(text: $searchBarText, placeholder: "search item")
         }
     }
 }

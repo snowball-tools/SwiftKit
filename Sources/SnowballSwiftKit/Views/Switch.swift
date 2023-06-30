@@ -1,5 +1,5 @@
 //
-//  SnowballSwitch.swift
+//  Switch.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/23/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SnowballSwitch: View {
+public struct Switch: View {
     @Binding var isOn: Bool
     var title: String?
     var subtitle: String?
@@ -23,23 +23,23 @@ public struct SnowballSwitch: View {
     public var body: some View {
         Toggle(isOn: $isOn) {
             if let title = title {
-                SnowballTitleLabel(title: title, subtitle: subtitle)
+                TitleLabel(title: title, subtitle: subtitle)
             }
         }
         .toggleStyle(.switch)
     }
 }
 
-struct SnowballSwitch_Previews: PreviewProvider {
+struct Switch_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SnowballSwitch(isOn: .constant(true))
+            Switch(isOn: .constant(true))
 
-            SnowballSwitch(isOn: .constant(false))
+            Switch(isOn: .constant(false))
 
-            SnowballSwitch(isOn: .constant(true), title: "Label")
+            Switch(isOn: .constant(true), title: "Label")
 
-            SnowballSwitch(isOn: .constant(true), title: "Label", subtitle: "Add some description for the switch here.")
+            Switch(isOn: .constant(true), title: "Label", subtitle: "Add some description for the switch here.")
         }
         .padding(.horizontal)
     }

@@ -10,16 +10,16 @@ import SwiftUI
 import SnowballSwiftKit
 
 struct SnowballSwiftExampleNFTView: View {
-    @State private var chain: SnowballChain = .eth_mainnet
+    @State private var chain: Chain = .eth_mainnet
     var type: NFTViewType = .grid
 
     var body: some View {
         Group {
             switch type {
             case .grid:
-                SnowballNFTGridView(ethAddress: "vivianphung.eth", alchemyKey: alchemyKey(for: chain), chain: chain)
+                NFTGridView(ethAddress: "vivianphung.eth", alchemyKey: alchemyKey(for: chain), chain: chain)
             case .list:
-                SnowballNFTListView(ethAddress: "vivianphung.eth", alchemyKey: alchemyKey(for: chain), chain: chain)
+                NFTListView(ethAddress: "vivianphung.eth", alchemyKey: alchemyKey(for: chain), chain: chain)
             }
         }
 
@@ -34,7 +34,7 @@ struct SnowballSwiftExampleNFTView: View {
 //        )
     }
 
-    func alchemyKey(for chain: SnowballChain = .eth_mainnet) -> String {
+    func alchemyKey(for chain: Chain = .eth_mainnet) -> String {
         return Bundle.main.infoDictionary?["ALCHEMY_\(chain.rawValue.uppercased())_KEY"] as? String ?? ""
     }
 }

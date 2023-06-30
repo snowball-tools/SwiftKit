@@ -14,19 +14,19 @@ struct SnowballSwiftExampleTextInputView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            SnowballTextInput($textInput, title: "Label", subtitle: "Provide additional context or helpful information.")
+            TextInput($textInput, title: "Label", subtitle: "Provide additional context or helpful information.")
 
-            SnowballTextInput($textInput, title: "Label")
+            TextInput($textInput, title: "Label")
 
-            SnowballTextInput($textInput)
+            TextInput($textInput)
 
-            SnowballTextInput($nonEmptyTextInput)
+            TextInput($nonEmptyTextInput)
 
-            SnowballTextInput($textInput, rightSystemIcon: "clipboard")
+            TextInput($textInput, rightSystemIcon: "clipboard")
 
-            SnowballTextInput($textInput, leftSystemIcon: "clipboard")
+            TextInput($textInput, leftSystemIcon: "clipboard")
 
-            SnowballTextInput($textInput, placeholder: "placeholder")
+            TextInput($textInput, placeholder: "placeholder")
         }
     }
 }

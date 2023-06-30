@@ -1,5 +1,5 @@
 //
-//  SnowballNFTGridView.swift
+//  NFTGridView.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/1/23.
@@ -10,11 +10,11 @@ import Nuke
 import NukeUI
 
 // todo: snowball settings
-public struct SnowballNFTGridView: View {
+public struct NFTGridView: View {
     @State private var listId = UUID()
     @StateObject private var viewModel = AlchemyViewModel<AlchemyNFTListModel>()
     var ethAddress: String
-    var chain: SnowballChain
+    var chain: Chain
     var alchemyKey: String  // todo: snowball settings
 
     private var gridLayout: [GridItem] = [
@@ -22,7 +22,7 @@ public struct SnowballNFTGridView: View {
         GridItem(.flexible(), spacing: 10)
     ]
 
-    public init(ethAddress: String, alchemyKey: String, chain: SnowballChain = .eth_mainnet) {
+    public init(ethAddress: String, alchemyKey: String, chain: Chain = .eth_mainnet) {
         self.ethAddress = ethAddress
         self.alchemyKey = alchemyKey
         self.chain = chain

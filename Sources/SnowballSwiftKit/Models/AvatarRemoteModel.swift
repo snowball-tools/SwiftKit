@@ -1,5 +1,5 @@
 //
-//  SnowballAvatarModel.swift
+//  AvatarModel.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/22/23.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnowballAssetKit
 
-public struct SnowballAvatarRemoteModel: Codable, Identifiable {
+public struct AvatarRemoteModel: Codable, Identifiable {
     public var id = UUID()
     var imageURL: URL
 

@@ -1,5 +1,5 @@
 //
-//  SnowballNFTListView.swift
+//  NFTListView.swift
 //  SnowballSwiftKit
 //
 //  Created by Vivian Phung on 5/1/23.
@@ -10,16 +10,16 @@ import Nuke
 import NukeUI
 
 // todo: snowball settings
-public struct SnowballNFTListView: View {
+public struct NFTListView: View {
     @StateObject private var viewModel = AlchemyViewModel<AlchemyNFTListModel>()
     @State private var listId = UUID()
     let ethAddress: String
-    let chain: SnowballChain
+    let chain: Chain
 
     // todo: snowball settings with api key
     var alchemyKey: String
 
-    public init(ethAddress: String, alchemyKey: String, chain: SnowballChain = .eth_mainnet) {
+    public init(ethAddress: String, alchemyKey: String, chain: Chain = .eth_mainnet) {
         self.ethAddress = ethAddress
         self.alchemyKey = alchemyKey
         self.chain = chain

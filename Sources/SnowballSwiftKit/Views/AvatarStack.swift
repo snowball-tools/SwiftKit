@@ -30,7 +30,7 @@ public struct AvatarStack: View {
     }
 }
 
-struct SnowballAvatarStack_Previews: PreviewProvider {
+struct AvatarStack_Previews: PreviewProvider {
     static var previews: some View {
         AvatarStack([SnowballImage(.sol),
                              SnowballImage(.metamask)])
