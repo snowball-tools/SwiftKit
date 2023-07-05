@@ -15,58 +15,51 @@ struct SnowballSwiftKitHomeView: View {
     var body: some View {
         NavigationView {
             List {
-                Group {
-                    NavigationLink("Text") {
-                        SnowballSwiftExampleText()
-                            .navigationTitle("Text")
-                    }
+                NavigationLink("Text") {
+                    SnowballSwiftExampleText()
+                        .navigationTitle("Text")
+                }
 
-                    NavigationLink("Buttons") {
-                        SnowballSwiftExampleButtonsView()
-                            .navigationTitle("Buttons")
-                    }
+                NavigationLink("Buttons") {
+                    SnowballSwiftExampleButtonsView()
+                        .navigationTitle("Buttons")
+                }
 
-                    NavigationLink("Title Label") {
-                        SnowballSwiftExampleTitleLabelView()
-                            .navigationTitle("Title Label")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
-                    }
+                NavigationLink("Title Label") {
+                    SnowballSwiftExampleTitleLabelView()
+                        .navigationTitle("Title Label")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                }
 
-                    NavigationLink("NFT Grid View") {
-                        SnowballSwiftExampleNFTView()
-                            .navigationTitle("NFT Grid")
-                    }
+                NavigationLink("NFT Grid View") {
+                    SnowballSwiftExampleNFTView()
+                        .navigationTitle("NFT Grid")
+                }
 
-                    NavigationLink("NFT List View") {
-                        SnowballSwiftExampleNFTView(type: .list)
-                            .navigationTitle("NFT List")
-                    }
+                NavigationLink("NFT List View") {
+                    SnowballSwiftExampleNFTView(type: .list)
+                        .navigationTitle("NFT List")
+                }
 
-                    NavigationLink("Avatar View (needs a lot of work)") {
-                        SnowballSwiftExampleAvatarStackView()
-                            .navigationTitle("Avatars")
-                            .padding(.horizontal)
-                    }
+                NavigationLink("Avatar View (needs a lot of work)") {
+                    SnowballSwiftExampleAvatarStackView()
+                        .navigationTitle("Avatars")
+                        .padding(.horizontal)
+                }
 
-                    SnowballSwitch(isOn: $switchStateIsOn, title: "Switch Text Label", subtitle: "Provide additional context or helpful information.")
+                SnowballSwitch(isOn: $switchStateIsOn, title: "Switch Text Label", subtitle: "Provide additional context or helpful information.")
 
-                    NavigationLink("Input View") {
-                        SnowballSwiftExampleTextInputView()
-                            .navigationTitle("Inputs")
-                            .padding(.horizontal)
-                    }
+                NavigationLink("Input View") {
+                    SnowballSwiftExampleTextInputView()
+                        .navigationTitle("Inputs")
+                        .padding(.horizontal)
+                }
 
-                    NavigationLink("Toast View") {
-                        SnowballSwiftExampleToastView()
-                            .navigationTitle("Toasts")
-                            .padding(.horizontal)
-                    }
-
-                    NavigationLink("Search Bar") {
-                        SnowballSwiftExampleSearchBarView()
-                            .navigationTitle("Search Bar")
-                    }
+                NavigationLink("Toast View") {
+                    SnowballSwiftExampleToastView()
+                        .navigationTitle("Toasts")
+                        .padding(.horizontal)
                 }
 
                 NavigationLink("SnowballAssetKit Library") {
