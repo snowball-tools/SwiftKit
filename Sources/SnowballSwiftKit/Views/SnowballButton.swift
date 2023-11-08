@@ -7,51 +7,94 @@
 
 import SwiftUI
 
-public struct SnowballButton: View {
-    var title: String?
-    var leftIcon: String?
-    var leftSystemIcon: String?
-    var rightIcon: String?
-    var rightSystemIcon: String?
-    var spacing: CGFloat = 0
-    var action: () -> Void
+public struct LabeledButton<S: StringProtocol, LeadingLabel: View, TrailingLabel: View>: View {
+    private var text: S?
+    private var leadingLabel: () -> LeadingLabel
+    private var trailingLabel: () -> TrailingLabel
+    private var spacing: CGFloat = 0
+    private var action: () -> Void
 
-    public init(_ text: String? = nil,
-                leftIcon: String? = nil,
-                leftSystemIcon: String? = nil,
-                rightIcon: String? = nil,
-                rightSystemIcon: String? = nil,
+    public init(_ text: S? = nil,
+                action: @escaping () -> Void,
                 spacing: CGFloat = 4,
-                action: @escaping () -> Void) {
-        self.leftIcon = leftIcon
-        self.leftSystemIcon = leftSystemIcon
-        self.title = text
-        self.rightIcon = rightIcon
-        self.rightSystemIcon = rightSystemIcon
+                leadingLabel: @escaping () -> LeadingLabel,
+                trailingLabel: @escaping () -> TrailingLabel) {
+        self.text = text
         self.action = action
         self.spacing = spacing
+        self.leadingLabel = leadingLabel
+        self.trailingLabel = trailingLabel
     }
 
     public var body: some View {
         Button(action: action) {
             HStack(spacing: spacing) {
-                if let leftIcon = leftIcon {
-                    Image(leftIcon)
-                }
-                if let leftSystemIcon = leftSystemIcon {
-                    Image(systemName: leftSystemIcon)
-                }
-                if let text = title {
+                leadingLabel()
+                if let text {
                     Text(text)
                 }
-                if let rightIcon = rightIcon {
-                    Image(rightIcon)
-                }
-                if let rightSystemIcon = rightSystemIcon {
-                    Image(systemName: rightSystemIcon)
-                }
-
+                trailingLabel()
             }
         }
+    }
+}
+
+extension LabeledButton where LeadingLabel == Image, TrailingLabel == Image {
+    public init(text: S? = nil, leadingImageName: String, trailingImageName: String, spacing: CGFloat = 4, action: @escaping () -> Void) {
+        self.init(text, action: action) {
+            Image(leadingImageName)
+        } trailingLabel: {
+            Image(trailingImageName)
+        }
+    }
+    
+    public init(text: S? = nil, leadingImageSystemName: String, trailingImageSystemName: String, spacing: CGFloat = 4, action: @escaping () -> Void) {
+        self.init(text, action: action) {
+            Image(systemName: leadingImageSystemName)
+        } trailingLabel: {
+            Image(systemName: trailingImageSystemName)
+        }
+    }
+}
+
+extension LabeledButton where LeadingLabel == Image, TrailingLabel == EmptyView {
+    public init(text: S? = nil, leadingImageName: String, spacing: CGFloat = 4, action: @escaping () -> Void) {
+        self.init(text, action: action) {
+            Image(leadingImageName)
+        } trailingLabel: {
+            EmptyView()
+        }
+    }
+    
+    public init(text: S? = nil, leadingImageSystemName: String, spacing: CGFloat = 4, action: @escaping () -> Void) {
+        self.init(text, action: action) {
+            Image(systemName: leadingImageSystemName)
+        } trailingLabel: {
+            EmptyView()
+        }
+    }
+}
+
+extension LabeledButton where LeadingLabel == EmptyView, TrailingLabel == Image {
+    public init(text: S? = nil, trailingImageName: String, spacing: CGFloat = 4, action: @escaping () -> Void) {
+        self.init(text, action: action) {
+            EmptyView()
+        } trailingLabel: {
+            Image(trailingImageName)
+        }
+    }
+    
+    public init(text: S? = nil, trailingImageSystemName: String, spacing: CGFloat = 4, action: @escaping () -> Void) {
+        self.init(text, action: action) {
+            EmptyView()
+        } trailingLabel: {
+            Image(systemName: trailingImageSystemName)
+        }
+    }
+}
+
+extension LabeledButton where LeadingLabel == EmptyView, TrailingLabel == EmptyView {
+    public init(text: S? = nil, spacing: CGFloat = 4, action: @escaping () -> Void) {
+        self.init(text, action: action, leadingLabel: EmptyView.init, trailingLabel: EmptyView.init)
     }
 }
