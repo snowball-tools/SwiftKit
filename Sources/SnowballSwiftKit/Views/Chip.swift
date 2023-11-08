@@ -14,8 +14,13 @@ public enum ChipSize {
 }
 
 public struct Chip: View {
-    @Binding var isActive: Bool
-    var isDisabled: Bool
+
+    @Environment(\.isEnabled)
+    private var isEnabled
+    
+    @Binding
+    var isActive: Bool
+
     var title: String
     var leftIcon: String?
     var leftSystemIcon: String?
@@ -24,7 +29,6 @@ public struct Chip: View {
     var size: ChipSize
 
     public init(isActive: Binding<Bool> = .constant(true),
-                isDisabled: Bool = false,
                 title: String,
                 leftIcon: String? = nil,
                 leftSystemIcon: String? = nil,
@@ -32,7 +36,6 @@ public struct Chip: View {
                 rightSystemIcon: String? = nil,
                 size: ChipSize = .small) {
         self._isActive = isActive
-        self.isDisabled = isDisabled
         self.title = title
         self.leftIcon = leftIcon
         self.leftSystemIcon = leftSystemIcon
@@ -67,21 +70,21 @@ public struct Chip: View {
             .background(backgroundColor)
             .cornerRadius(100)
         }
-        .disabled(isDisabled)
+        .disabled(!isEnabled)
     }
 
     var backgroundColor: Color {
-        if isDisabled {
-            return Color(UIColor.systemFill)
+        if !isEnabled {
+            return Color(.systemFill)
         }
-        return isActive ? SnowballColor.secondaryButton.color : Color(UIColor.tertiarySystemFill)
+        return isActive ? SnowballColor.secondaryButton.color : Color(.tertiarySystemFill)
     }
 
     var foregroundColor: Color {
-        if isDisabled {
-            return Color(UIColor.tertiaryLabel)
+        if !isEnabled {
+            return Color(.tertiaryLabel)
         }
-        return isActive ? Color(UIColor.systemBlue) : Color(UIColor.label)
+        return isActive ? Color(.systemBlue) : Color(.label)
     }
 
     var padding: EdgeInsets {
@@ -100,8 +103,8 @@ struct Chip_Previews: PreviewProvider {
             Chip(isActive: .constant(true), title: "Chip")
             Chip(isActive: .constant(false), title: "Chip", size: .medium)
             Chip(isActive: .constant(false), title: "Chip", size: .medium)
-            Chip(isDisabled: true, title: "Chip", size: .medium)
-
+            Chip(title: "Chip", size: .medium)
+                .disabled(true)
         }
     }
 }
