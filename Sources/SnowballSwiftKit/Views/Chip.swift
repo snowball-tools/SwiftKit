@@ -22,10 +22,10 @@ public struct Chip: View {
     var isActive: Bool
 
     var title: String
-    var leftIcon: String?
-    var leftSystemIcon: String?
-    var rightIcon: String?
-    var rightSystemIcon: String?
+    var leadingIcon: String?
+    var leadingSystemIcon: String?
+    var trailingIcon: String?
+    var trailingSystemIcon: String?
     var size: ChipSize
 
     public init(isActive: Binding<Bool> = .constant(true),
@@ -37,10 +37,10 @@ public struct Chip: View {
                 size: ChipSize = .small) {
         self._isActive = isActive
         self.title = title
-        self.leftIcon = leftIcon
-        self.leftSystemIcon = leftSystemIcon
-        self.rightIcon = rightIcon
-        self.rightSystemIcon = rightSystemIcon
+        self.leadingIcon = leftIcon
+        self.leadingSystemIcon = leftSystemIcon
+        self.trailingIcon = rightIcon
+        self.trailingSystemIcon = rightSystemIcon
         self.size = size
     }
 
@@ -49,19 +49,19 @@ public struct Chip: View {
             isActive.toggle()
         } label: {
             HStack(spacing: 4) {
-                if let leftIcon = leftIcon {
+                if let leftIcon = leadingIcon {
                     Image(leftIcon)
                 }
-                if let leftSystemIcon = leftSystemIcon {
+                if let leftSystemIcon = leadingSystemIcon {
                     Image(systemName: leftSystemIcon)
                 }
                 Text(title)
                     .font(Font.system(size: 12))
                     .lineSpacing(16)
-                if let rightIcon = rightIcon {
+                if let rightIcon = trailingIcon {
                     Image(rightIcon)
                 }
-                if let rightSystemIcon = rightSystemIcon {
+                if let rightSystemIcon = trailingSystemIcon {
                     Image(systemName: rightSystemIcon)
                 }
             }
