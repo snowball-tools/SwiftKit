@@ -13,34 +13,28 @@ public enum ChipSize {
     case medium
 }
 
-public struct Chip: View {
+public struct Chip<LeadingContent: View, TrailingContent: View, TitleString: StringProtocol>: View {
 
     @Environment(\.isEnabled)
     private var isEnabled
     
     @Binding
-    var isActive: Bool
+    private var isActive: Bool
 
-    var title: String
-    var leadingIcon: String?
-    var leadingSystemIcon: String?
-    var trailingIcon: String?
-    var trailingSystemIcon: String?
-    var size: ChipSize
+    private var title: TitleString
+    private var leadingContent: () -> LeadingContent
+    private var trailingContent: () -> TrailingContent
+    private var size: ChipSize
 
     public init(isActive: Binding<Bool> = .constant(true),
-                title: String,
-                leftIcon: String? = nil,
-                leftSystemIcon: String? = nil,
-                rightIcon: String? = nil,
-                rightSystemIcon: String? = nil,
-                size: ChipSize = .small) {
+                title: TitleString,
+                size: ChipSize = .small,
+                leadingContent: @escaping () -> LeadingContent,
+                trailingContent: @escaping () -> TrailingContent) {
         self._isActive = isActive
         self.title = title
-        self.leadingIcon = leftIcon
-        self.leadingSystemIcon = leftSystemIcon
-        self.trailingIcon = rightIcon
-        self.trailingSystemIcon = rightSystemIcon
+        self.leadingContent = leadingContent
+        self.trailingContent = trailingContent
         self.size = size
     }
 
@@ -49,21 +43,11 @@ public struct Chip: View {
             isActive.toggle()
         } label: {
             HStack(spacing: 4) {
-                if let leftIcon = leadingIcon {
-                    Image(leftIcon)
-                }
-                if let leftSystemIcon = leadingSystemIcon {
-                    Image(systemName: leftSystemIcon)
-                }
+                leadingContent()
                 Text(title)
                     .font(Font.system(size: 12))
                     .lineSpacing(16)
-                if let rightIcon = trailingIcon {
-                    Image(rightIcon)
-                }
-                if let rightSystemIcon = trailingSystemIcon {
-                    Image(systemName: rightSystemIcon)
-                }
+               trailingContent()
             }
             .foregroundColor(foregroundColor)
             .padding(padding)
@@ -94,6 +78,44 @@ public struct Chip: View {
         case .medium:
             return EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12)
         }
+    }
+}
+
+extension Chip where LeadingContent == EmptyView, TrailingContent == EmptyView {
+    public init(isActive: Binding<Bool> = .constant(true), 
+                title: TitleString,
+                size: ChipSize = .small) {
+        self.init(isActive: isActive, 
+                  title: title,
+                  size: size,
+                  leadingContent: EmptyView.init,
+                  trailingContent: EmptyView.init)
+    }
+}
+
+extension Chip where TrailingContent == EmptyView {
+    public init(isActive: Binding<Bool> = .constant(true), 
+                title: TitleString,
+                size: ChipSize = .small,
+                leadingContent: @escaping () -> LeadingContent) {
+        self.init(isActive: isActive, 
+                  title: title,
+                  size: size,
+                  leadingContent: leadingContent,
+                  trailingContent: EmptyView.init)
+    }
+}
+
+extension Chip where LeadingContent == EmptyView {
+    public init(isActive: Binding<Bool> = .constant(true), 
+                title: TitleString,
+                size: ChipSize = .small,
+                trailingContent: @escaping () -> TrailingContent) {
+        self.init(isActive: isActive, 
+                  title: title,
+                  size: size,
+                  leadingContent: EmptyView.init,
+                  trailingContent: trailingContent)
     }
 }
 
