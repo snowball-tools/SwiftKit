@@ -52,7 +52,7 @@ public struct Chip<LeadingContent: View, TrailingContent: View, TitleString: Str
             .foregroundColor(foregroundColor)
             .padding(padding)
             .background(backgroundColor)
-            .cornerRadius(100)
+            .background(Capsule().fill(backgroundColor))
         }
         .disabled(!isEnabled)
     }
