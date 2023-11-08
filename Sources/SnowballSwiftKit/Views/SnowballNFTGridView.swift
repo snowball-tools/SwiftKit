@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Nuke
-import NukeUI
 
 // todo: snowball settings
 public struct SnowballNFTGridView: View {
@@ -26,14 +24,6 @@ public struct SnowballNFTGridView: View {
         self.ethAddress = ethAddress
         self.alchemyKey = alchemyKey
         self.chain = chain
-    }
-
-    private let pipeline = ImagePipeline {
-        $0.dataLoader = {
-            let config = URLSessionConfiguration.default
-            config.urlCache = nil
-            return DataLoader(configuration: config)
-        }()
     }
 
     public var body: some View {
@@ -66,7 +56,6 @@ public struct SnowballNFTGridView: View {
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button {
-                            ImagePipeline.shared.cache.removeAll()
                             self.listId = UUID()
                         } label: {
                             Image(systemName: "arrow.clockwise")
@@ -82,7 +71,7 @@ public struct SnowballNFTGridView: View {
     }
 
     func makeImage(url: URL) -> some View {
-        LazyImage(url: url) { state in
+        AsyncImage(url: url) { state in
             if let image = state.image {
                 image
                     .resizable()
@@ -91,6 +80,5 @@ public struct SnowballNFTGridView: View {
                 Color.gray.opacity(0.2)
             }
         }
-        .pipeline(pipeline)
     }
 }

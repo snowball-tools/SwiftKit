@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Nuke
-import NukeUI
 
 // todo: snowball settings
 public struct SnowballNFTListView: View {
@@ -25,17 +23,9 @@ public struct SnowballNFTListView: View {
         self.chain = chain
     }
 
-    private let pipeline = ImagePipeline {
-        $0.dataLoader = {
-            let config = URLSessionConfiguration.default
-            config.urlCache = nil
-            return DataLoader(configuration: config)
-        }()
-    }
-    
     public var body: some View {
         List(viewModel.models?.nfts ?? []) { nft in
-            let view = VStack {
+            VStack {
                 VStack {
                     makeImage(url: URL(string: nft.media.first?.thumbnail ?? "https://en.wikipedia.org/wiki/File:Lynx_kitten.jpg")!)
                     Text(nft.title)
@@ -44,13 +34,11 @@ public struct SnowballNFTListView: View {
                 }.padding()
             }
             .listRowInsets(.init())
-            view
         }
         .id(listId)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    ImagePipeline.shared.cache.removeAll()
                     self.listId = UUID()
                 } label: {
                     Image(systemName: "arrow.clockwise")
@@ -64,7 +52,7 @@ public struct SnowballNFTListView: View {
     }
 
     func makeImage(url: URL) -> some View {
-        LazyImage(url: url) { state in
+        AsyncImage(url: url) { state in
             if let image = state.image {
                 image
                     .resizable()
@@ -73,6 +61,5 @@ public struct SnowballNFTListView: View {
                 Color.gray.opacity(0.2)
             }
         }
-        .pipeline(pipeline)
     }
 }
