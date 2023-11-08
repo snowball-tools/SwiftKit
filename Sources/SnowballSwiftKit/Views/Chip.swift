@@ -81,6 +81,152 @@ public struct Chip<LeadingContent: View, TrailingContent: View, TitleString: Str
     }
 }
 
+extension Chip where LeadingContent == Image, TrailingContent == Image {
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                leadingImageName: String,
+                trailingImageName: String,
+                size: ChipSize = .small) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            Image(leadingImageName)
+        } trailingContent: {
+            Image(trailingImageName)
+        }
+    }
+    
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                leadingSystemName: String,
+                trailingSystemName: String,
+                size: ChipSize = .small) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            Image(systemName: leadingSystemName)
+        } trailingContent: {
+            Image(systemName: trailingSystemName)
+        }
+    }
+}
+
+extension Chip where LeadingContent == Image {
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                leadingImageName: String,
+                size: ChipSize = .small,
+                trailingContent: @escaping () -> TrailingContent) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            Image(leadingImageName)
+        } trailingContent: {
+            trailingContent()
+        }
+    }
+    
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                leadingSystemName: String,
+                size: ChipSize = .small,
+                trailingContent: @escaping () -> TrailingContent) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            Image(systemName: leadingSystemName)
+        } trailingContent: {
+            trailingContent()
+        }
+    }
+}
+
+extension Chip where TrailingContent == Image {
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                trailingImageName: String,
+                size: ChipSize = .small,
+                leadingContent: @escaping () -> LeadingContent) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            leadingContent()
+        } trailingContent: {
+            Image(trailingImageName)
+        }
+    }
+    
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                trailingSystemName: String,
+                size: ChipSize = .small,
+                leadingContent: @escaping () -> LeadingContent) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            leadingContent()
+        } trailingContent: {
+            Image(systemName: trailingSystemName)
+        }
+    }
+}
+
+extension Chip where LeadingContent == EmptyView, TrailingContent == Image {
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                trailingImageName: String,
+                size: ChipSize = .small) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            EmptyView()
+        } trailingContent: {
+            Image(trailingImageName)
+        }
+    }
+    
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                trailingSystemName: String,
+                size: ChipSize = .small) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            EmptyView()
+        } trailingContent: {
+            Image(systemName: trailingSystemName)
+        }
+    }
+}
+
+extension Chip where LeadingContent == Image, TrailingContent == EmptyView {
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                leadingImageName: String,
+                size: ChipSize = .small) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            Image(leadingImageName)
+        } trailingContent: {
+            EmptyView()
+        }
+    }
+    
+    public init(isActive: Binding<Bool> = .constant(true),
+                title: TitleString,
+                leadingSystemName: String,
+                size: ChipSize = .small) {
+        self.init(isActive: isActive,
+                  title: title,
+                  size: size) {
+            Image(systemName: leadingSystemName)
+        } trailingContent: {
+            EmptyView()
+        }
+    }
+}
+
 extension Chip where LeadingContent == EmptyView, TrailingContent == EmptyView {
     public init(isActive: Binding<Bool> = .constant(true), 
                 title: TitleString,
