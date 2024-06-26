@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SnowballAssetKit
 
 struct AvatarStack: View {
     let avatars: [URL?]
