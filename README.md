@@ -1,4 +1,4 @@
-# SnowballSwiftKit
+# SwiftKit
 
 Lots to do!! SwiftUI Component Kit supporting iOS 15.0+.
 
